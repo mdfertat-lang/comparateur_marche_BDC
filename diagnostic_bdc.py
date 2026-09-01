@@ -8,130 +8,115 @@ KEYWORD = "scientifique"
 DETAIL_LINK = "/bdc/entreprise/consultation/show/"
 
 
-def clean_text(text: str) -> str:
+def clean_text(text):
     return re.sub(r"\s+", " ", text or "").strip()
 
 
-def report_page_structure(page, title):
-    print("\n" + "=" * 70)
-    print(title)
-    print("=" * 70)
-    print("URL finale :", page.url)
-    print("Titre :", clean_text(page.title()))
+def visible_text(page):
+    return page.locator("body").inner_text(timeout=15000)
 
-    text = page.locator("body").inner_text(timeout=15000)
-    m = re.search(r"Nombre de résultats\s*:?\s*(\d+)", text, re.I)
-    print("Nombre de résultats affiché :", m.group(1) if m else "non détecté")
 
+def unique_detail_hrefs(page):
     links = page.locator(f"a[href*='{DETAIL_LINK}']")
     hrefs = []
     for i in range(links.count()):
         href = links.nth(i).get_attribute("href") or ""
         if href:
             hrefs.append(urljoin(page.url, href))
-    counts = Counter(hrefs)
-    unique_hrefs = list(dict.fromkeys(hrefs))
+    return list(dict.fromkeys(hrefs)), hrefs
 
-    print("Liens de fiches détectés dans le DOM :", len(hrefs))
-    print("Fiches d'annonces DISTINCTES détectées :", len(unique_hrefs))
-    print("Doublons de liens dans le DOM :", sum(v - 1 for v in counts.values() if v > 1))
-    if counts:
-        print("Distribution des copies d'un même lien :", dict(sorted(Counter(counts.values()).items())))
 
-    print("\n--- STRUCTURE DES BLOCS ---")
-    for selector in ["div.card", "article", "li"]:
-        loc = page.locator(selector)
-        if loc.count():
-            print(f"{selector} : {loc.count()} élément(s)")
-
-    print("\n--- CONTENEURS DES LIENS (SANS CONTENU DES ANNONCES) ---")
-    seen = set()
-    for i in range(min(links.count(), 12)):
-        info = links.nth(i).evaluate("""
-            e => { const p=[]; let n=e.parentElement;
-            for(let i=0;n&&i<5;i++,n=n.parentElement)
-              p.push({tag:n.tagName.toLowerCase(),id:n.id||'',cls:n.className||''});
-            return p; }
-        """)
-        key = repr(info)
-        if key not in seen:
-            seen.add(key)
-            print("  ", info)
-
-    print("\n--- CHAMPS / CONTRÔLES ---")
-    fields = page.locator("input, select, textarea, button")
-    for i in range(fields.count()):
-        f = fields.nth(i)
-        print(f"- {f.evaluate('e => e.tagName')} name={f.get_attribute('name')} id={f.get_attribute('id')} type={f.get_attribute('type')} value={f.get_attribute('value')} text={clean_text(f.inner_text())[:100]}")
-
-    print("\n--- PAGINATION ---")
-    all_links = page.locator("a")
-    seen = set()
-    for i in range(all_links.count()):
-        a = all_links.nth(i)
-        t = clean_text(a.inner_text())
-        h = a.get_attribute("href") or ""
-        if t in {"Précédent", "Suivant", "…"} or t.isdigit() or "page" in h.lower():
-            item = (t, h)
-            if item not in seen:
-                seen.add(item)
-                print(f"- {t!r} -> {h}")
+def report_page(page, title):
+    print("\n" + "=" * 70)
+    print(title)
+    print("=" * 70)
+    print("URL :", page.url)
+    print("Titre :", clean_text(page.title()))
+    text = visible_text(page)
+    m = re.search(r"Nombre de résultats\s*:?\s*(\d+)", text, re.I)
+    print("Nombre de résultats affiché :", m.group(1) if m else "non détecté")
+    unique, all_hrefs = unique_detail_hrefs(page)
+    print("Liens de fiches dans le DOM :", len(all_hrefs))
+    print("Annonces DISTINCTES détectées :", len(unique))
+    print("Copies supplémentaires dans le DOM :", len(all_hrefs) - len(unique))
+    print("Répartition des copies :", dict(sorted(Counter(all_hrefs).values() if False else Counter(Counter(all_hrefs).values()).items())))
+    print("\n--- LIENS DISTINCTS DES 10 ANNONCES DE CETTE PAGE ---")
+    for i, href in enumerate(unique, 1):
+        print(f"{i}. {href}")
+    return unique
 
 
 def find_keyword_input(page):
-    try:
-        loc = page.get_by_label("Recherche par mot clé", exact=True)
-        if loc.count(): return loc.first
-    except Exception: pass
-    inputs = page.locator("input")
-    for i in range(inputs.count()):
-        inp = inputs.nth(i)
-        attrs = " ".join(str(inp.get_attribute(x) or "") for x in ("name","id","placeholder","aria-label")).lower()
-        if any(w in attrs for w in ("mot","keyword","search","recherche")):
-            return inp
-    return None
+    loc = page.locator("#search_consultation_entreprise_keyword")
+    return loc.first if loc.count() else None
 
 
 def click_search(page):
-    for loc in [
-        page.get_by_role("button", name=re.compile("Lancer la recherche", re.I)),
-        page.get_by_text("Lancer la recherche", exact=True),
-        page.locator("input[type='submit']"),
-        page.locator("button[type='submit']")]:
-        try:
-            if loc.count():
-                loc.first.click(); return True
-        except Exception: pass
+    loc = page.get_by_role("button", name=re.compile("Lancer la recherche", re.I))
+    if loc.count():
+        loc.first.click()
+        return True
     return False
+
+
+def page_url_from_link(current_url, href):
+    return urljoin(current_url, href)
 
 
 def main():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        page = browser.new_page(viewport={"width":1440,"height":1200}, locale="fr-FR")
+        page = browser.new_page(viewport={"width": 1440, "height": 1200}, locale="fr-FR")
         page.set_default_timeout(20000)
 
         page.goto(URL, wait_until="domcontentloaded")
         page.wait_for_timeout(2500)
-        report_page_structure(page, "ÉTAPE 1 — LECTURE DE LA PAGE BDC")
+        report_page(page, "ÉTAPE 1 — PAGE BDC INITIALE")
 
-        print("\n" + "=" * 70)
-        print(f"ÉTAPE 2 — TEST DE RECHERCHE : {KEYWORD}")
-        print("=" * 70)
-        inp = find_keyword_input(page)
-        if inp is None:
-            raise SystemExit("Impossible d'identifier le champ de recherche")
-        print("Champ identifié :", inp.get_attribute("name"), inp.get_attribute("id"), inp.get_attribute("placeholder"))
-        inp.fill(KEYWORD)
-        print("Mot saisi :", KEYWORD)
+        keyword_input = find_keyword_input(page)
+        if keyword_input is None:
+            raise SystemExit("Champ de recherche introuvable")
+        keyword_input.fill(KEYWORD)
         if not click_search(page):
-            raise SystemExit("Impossible de trouver Lancer la recherche")
-        try: page.wait_for_load_state("domcontentloaded", timeout=20000)
-        except PlaywrightTimeoutError: pass
+            raise SystemExit("Bouton de recherche introuvable")
+        try:
+            page.wait_for_load_state("domcontentloaded", timeout=20000)
+        except PlaywrightTimeoutError:
+            pass
         page.wait_for_timeout(2500)
-        report_page_structure(page, f"RÉSULTAT DE LA RECHERCHE — {KEYWORD}")
-        print("\nFIN DU TEST : aucune annonce n'a été extraite individuellement.")
+
+        page1 = report_page(page, f"ÉTAPE 2 — {KEYWORD.upper()} — PAGE 1")
+
+        # Construire l'URL de la page 2 à partir du lien de pagination du site.
+        next_page = page.locator("a[href*='page=2']").last
+        if next_page.count():
+            href2 = next_page.get_attribute("href")
+            page2_url = page_url_from_link(page.url, href2)
+            print("\nURL PAGE 2 :", page2_url)
+            page.goto(page2_url, wait_until="domcontentloaded")
+            page.wait_for_timeout(2500)
+            page2 = report_page(page, f"ÉTAPE 3 — {KEYWORD.upper()} — PAGE 2")
+        else:
+            print("\nImpossible de trouver le lien vers la page 2.")
+            page2 = []
+
+        overlap = sorted(set(page1) & set(page2))
+        print("\n" + "=" * 70)
+        print("ÉTAPE 4 — COMPARAISON PAGE 1 / PAGE 2")
+        print("=" * 70)
+        print("Annonces distinctes page 1 :", len(page1))
+        print("Annonces distinctes page 2 :", len(page2))
+        print("Annonces communes aux deux pages :", len(overlap))
+        if overlap:
+            print("ATTENTION : les mêmes fiches apparaissent sur les deux pages :")
+            for href in overlap:
+                print("-", href)
+        else:
+            print("OK : aucune fiche commune entre les deux premières pages.")
+
+        print("\nFIN DU DIAGNOSTIC : aucune fiche n'a été ouverte ni son contenu métier extrait.")
         browser.close()
+
 
 if __name__ == "__main__":
     main()
