@@ -8,151 +8,136 @@ KEYWORD = "scientifique"
 DETAIL_LINK = "/bdc/entreprise/consultation/show/"
 
 
-def clean_text(text):
+def clean(text):
     return re.sub(r"\s+", " ", text or "").strip()
 
 
-def visible_text(page):
-    return page.locator("body").inner_text(timeout=15000)
-
-
-def unique_detail_hrefs(page):
+def unique_hrefs(page):
     links = page.locator(f"a[href*='{DETAIL_LINK}']")
-    hrefs = []
+    all_hrefs = []
     for i in range(links.count()):
         href = links.nth(i).get_attribute("href") or ""
         if href:
-            hrefs.append(urljoin(page.url, href))
-    return list(dict.fromkeys(hrefs)), hrefs
+            all_hrefs.append(urljoin(page.url, href))
+    return list(dict.fromkeys(all_hrefs)), all_hrefs
 
 
-def report_page(page, title):
-    print("\n" + "=" * 70)
-    print(title)
-    print("=" * 70)
-    print("URL :", page.url)
-    print("Titre :", clean_text(page.title()))
-    text = visible_text(page)
-    m = re.search(r"Nombre de résultats\s*:?\s*(\d+)", text, re.I)
-    print("Nombre de résultats affiché :", m.group(1) if m else "non détecté")
-    unique, all_hrefs = unique_detail_hrefs(page)
-    distribution = Counter(Counter(all_hrefs).values())
-    print("Liens de fiches dans le DOM :", len(all_hrefs))
-    print("Annonces DISTINCTES détectées :", len(unique))
-    print("Copies supplémentaires dans le DOM :", len(all_hrefs) - len(unique))
-    print("Répartition des copies :", dict(sorted(distribution.items())))
-    print("\n--- LIENS DISTINCTS DES ANNONCES DE CETTE PAGE ---")
-    for i, href in enumerate(unique, 1):
-        print(f"{i}. {href}")
+def find_card(page, href):
+    """Trouve le conteneur de résultat correspondant au lien sans ouvrir la fiche détail."""
+    path = href.split(DETAIL_LINK, 1)[-1].strip("/")
+    link = page.locator(f"a[href*='{path}']").first
+    if not link.count():
+        return None
+
+    current = link
+    best = None
+    for _ in range(10):
+        try:
+            text = current.inner_text()
+            html = current.evaluate("e => e.outerHTML")
+            if text and len(clean(text)) >= 80:
+                best = (clean(text), html)
+                # Une carte doit contenir au moins deux libellés connus.
+                known = sum(
+                    label.lower() in text.lower()
+                    for label in ["référence", "objet", "acheteur", "date limite", "lieu d'exécution"]
+                )
+                if known >= 2:
+                    return best
+        except Exception:
+            pass
+        current = current.locator("xpath=..").first
+
+    return best
+
+
+def extract_from_card(text):
+    """Extrait les champs directement depuis le texte de la carte de résultat."""
+    lines = [clean(x) for x in text.splitlines() if clean(x)]
+    out = {}
+
+    labels = [
+        "Référence",
+        "Objet",
+        "Acheteur",
+        "Date limite de remise des devis",
+        "Date limite de réception des devis",
+        "Lieu d'exécution",
+    ]
+
+    # Cas normal : libellé et valeur sur la même ligne, ou valeur sur la ligne suivante.
+    for i, line in enumerate(lines):
+        for label in labels:
+            pattern = rf"^{re.escape(label)}\s*:?\s*(.*)$"
+            m = re.match(pattern, line, re.I)
+            if not m:
+                continue
+            value = clean(m.group(1))
+            if not value and i + 1 < len(lines):
+                value = lines[i + 1]
+            if value:
+                out[label] = value
+
+    # Le site peut afficher la référence sous forme de #XXXX sans libellé exploitable.
+    if "Référence" not in out:
+        m = re.search(r"#\s*([A-Za-z0-9À-ÿ][A-Za-z0-9À-ÿ./_\- ]{1,100})", text)
+        if m:
+            out["Référence"] = clean(m.group(1))
+
+    return out
+
+
+def report_search(page):
+    body = page.locator("body").inner_text(timeout=15000)
+    m = re.search(r"Nombre de résultats\s*:?\s*(\d+)", body, re.I)
+    unique, all_hrefs = unique_hrefs(page)
+
+    print("Nombre de résultats affiché :", m.group(1) if m else "NON DÉTECTÉ")
+    print("Liens DOM :", len(all_hrefs))
+    print("Annonces distinctes :", len(unique))
+    print("Copies DOM :", len(all_hrefs) - len(unique))
+    print("Répartition des copies :", dict(sorted(Counter(all_hrefs).values() and Counter(Counter(all_hrefs).values()).items())))
     return unique
 
 
-def find_keyword_input(page):
-    loc = page.locator("#search_consultation_entreprise_keyword")
-    return loc.first if loc.count() else None
+def inspect_cards(page, hrefs, page_name):
+    print("\n" + "=" * 80)
+    print(f"{page_name} — EXTRACTION DIRECTE DES CARTES")
+    print("=" * 80)
 
+    for i, href in enumerate(hrefs, 1):
+        print(f"\n--- ANNONCE {i}/{len(hrefs)} ---")
+        print("URL :", href)
+        result = find_card(page, href)
+        if not result:
+            print("CARTE INTROUVABLE")
+            continue
 
-def submit_search(page):
-    # Soumission directe du formulaire, sans dépendre du texte du bouton.
-    form = page.locator("form").filter(has=page.locator("#search_consultation_entreprise_keyword")).first
-    if form.count():
-        try:
-            with page.expect_navigation(wait_until="domcontentloaded", timeout=20000):
-                form.evaluate("form => form.submit()")
-            return True
-        except PlaywrightTimeoutError:
-            return True
-    try:
-        page.locator("#search_consultation_entreprise_keyword").press("Enter")
-        return True
-    except Exception:
-        return False
+        text, html = result
+        print("TEXTE DE LA CARTE :")
+        print(text)
 
+        fields = extract_from_card(text)
+        print("\nCHAMPS INTERPRÉTÉS :")
+        for key in ["Référence", "Objet", "Acheteur", "Date limite de remise des devis", "Date limite de réception des devis", "Lieu d'exécution"]:
+            if key in fields:
+                print(f"{key} = {fields[key]}")
 
-def extract_labeled_field(text, label):
-    """Extrait une valeur située après un libellé, même si le texte est sur la ligne suivante."""
-    lines = [clean_text(x) for x in text.splitlines()]
-    lines = [x for x in lines if x]
-    label_re = re.compile(rf"^{re.escape(label)}\s*:??\s*(.*)$", re.I)
-    for i, line in enumerate(lines):
-        m = label_re.match(line)
-        if m:
-            value = clean_text(m.group(1))
-            if value:
-                return value
-            if i + 1 < len(lines):
-                return lines[i + 1]
-    # Secours si le libellé est noyé dans une ligne plus longue.
-    m = re.search(rf"{re.escape(label)}\s*:\s*(.+?)(?=\s+(?:Référence|Objet|Acheteur|Date limite|Date de mise|Lieu|Montant)\s*:|$)", text, re.I)
-    return clean_text(m.group(1)) if m else "NON DÉTECTÉ"
-
-
-def extract_date_limite(text):
-    patterns = [
-        r"Date limite de remise des devis\s*[:\-]?\s*(\d{1,2}/\d{1,2}/\d{4})\s*(?:à|a)?\s*(\d{1,2}:\d{2})?",
-        r"Date limite\s*[:\-]?\s*(\d{1,2}/\d{1,2}/\d{4})\s*(?:à|a)?\s*(\d{1,2}:\d{2})?",
-    ]
-    for pattern in patterns:
-        m = re.search(pattern, text, re.I)
-        if m:
-            date = m.group(1)
-            heure = m.group(2)
-            return f"{date} {heure}" if heure else date
-    return "NON DÉTECTÉ"
-
-
-def read_detail(browser, href, index, total):
-    detail = browser.new_page(viewport={"width": 1440, "height": 1200}, locale="fr-FR")
-    detail.set_default_timeout(20000)
-    print("\n" + "-" * 70)
-    print(f"FICHE {index}/{total}")
-    print("URL :", href)
-    try:
-        detail.goto(href, wait_until="domcontentloaded", timeout=30000)
-        detail.wait_for_timeout(1800)
-        text = visible_text(detail)
-        print("URL finale :", detail.url)
-        print("Titre :", clean_text(detail.title()))
-        print("Référence :", extract_labeled_field(text, "Référence"))
-        print("Objet :", extract_labeled_field(text, "Objet"))
-        print("Acheteur :", extract_labeled_field(text, "Acheteur"))
-        print("Date limite :", extract_date_limite(text))
-
-        # Signale les cas où les champs principaux n'ont pas été reconnus.
         missing = []
-        if extract_labeled_field(text, "Référence") == "NON DÉTECTÉ":
+        if "Référence" not in fields:
             missing.append("Référence")
-        if extract_labeled_field(text, "Objet") == "NON DÉTECTÉ":
+        if "Objet" not in fields:
             missing.append("Objet")
-        if extract_labeled_field(text, "Acheteur") == "NON DÉTECTÉ":
+        if "Acheteur" not in fields:
             missing.append("Acheteur")
-        if extract_date_limite(text) == "NON DÉTECTÉ":
+        if not any(k in fields for k in ["Date limite de remise des devis", "Date limite de réception des devis"]):
             missing.append("Date limite")
+        print("MANQUANTS :", ", ".join(missing) if missing else "AUCUN")
+
+        # HTML limité au cas où la structure doit encore être corrigée.
         if missing:
-            print("ATTENTION — champs non détectés :", ", ".join(missing))
-            print("--- LIGNES VISIBLES POTENTIELLEMENT UTILES ---")
-            for line in [clean_text(x) for x in text.splitlines() if clean_text(x)]:
-                if any(word.lower() in line.lower() for word in ["référence", "objet", "acheteur", "date", "limite", "devis", "lieu"]):
-                    print(line)
-    except Exception as exc:
-        print("ERREUR OUVERTURE/LECTURE :", repr(exc))
-    finally:
-        detail.close()
-
-
-def inspect_pages(browser, page1, page2):
-    print("\n" + "=" * 70)
-    print("ÉTAPE 5 — LECTURE DES FICHES D'ANNONCES")
-    print("=" * 70)
-    print("Objectif : ouvrir chaque fiche et vérifier la lecture de Référence, Objet, Acheteur et Date limite.")
-
-    all_pages = [("PAGE 1", page1), ("PAGE 2", page2)]
-    for page_name, links in all_pages:
-        print("\n" + "#" * 70)
-        print(f"{page_name} — {len(links)} fiche(s) à ouvrir")
-        print("#" * 70)
-        for i, href in enumerate(links, 1):
-            read_detail(browser, href, i, len(links))
+            print("\nHTML DU CONTENEUR (pour correction) :")
+            print(html[:10000])
 
 
 def main():
@@ -161,55 +146,68 @@ def main():
         page = browser.new_page(viewport={"width": 1440, "height": 1200}, locale="fr-FR")
         page.set_default_timeout(20000)
 
-        page.goto(URL, wait_until="domcontentloaded")
-        page.wait_for_timeout(2500)
-        # La page initiale sert uniquement de contrôle technique.
-        report_page(page, "ÉTAPE 1 — PAGE BDC INITIALE (CONTRÔLE TECHNIQUE)")
+        try:
+            page.goto(URL, wait_until="domcontentloaded", timeout=60000)
+            page.wait_for_timeout(2000)
 
-        keyword_input = find_keyword_input(page)
-        if keyword_input is None:
-            raise SystemExit("Champ de recherche introuvable")
-        keyword_input.fill(KEYWORD)
-        if not submit_search(page):
-            raise SystemExit("Impossible de soumettre la recherche")
-        page.wait_for_timeout(2500)
+            print("=" * 80)
+            print("DIAGNOSTIC BDC — EXTRACTION DIRECTE DES CARTES")
+            print("=" * 80)
+            print("URL initiale :", page.url)
 
-        page1 = report_page(page, f"ÉTAPE 2 — {KEYWORD.upper()} — PAGE 1")
+            field = page.locator("#search_consultation_entreprise_keyword")
+            if not field.count():
+                raise SystemExit("Champ de recherche introuvable")
 
-        next_page = page.locator("a[href*='page=2']").last
-        if next_page.count():
-            href2 = next_page.get_attribute("href")
-            page2_url = urljoin(page.url, href2)
-            print("\nURL PAGE 2 :", page2_url)
-            page.goto(page2_url, wait_until="domcontentloaded")
+            field.fill(KEYWORD)
+            form = page.locator("form").filter(has=field).first
+            try:
+                with page.expect_navigation(wait_until="domcontentloaded", timeout=30000):
+                    form.evaluate("form => form.submit()")
+            except PlaywrightTimeoutError:
+                pass
             page.wait_for_timeout(2500)
-            page2 = report_page(page, f"ÉTAPE 3 — {KEYWORD.upper()} — PAGE 2")
-        else:
-            print("\nImpossible de trouver le lien vers la page 2.")
-            page2 = []
 
-        overlap = sorted(set(page1) & set(page2))
-        print("\n" + "=" * 70)
-        print("ÉTAPE 4 — COMPARAISON PAGE 1 / PAGE 2")
-        print("=" * 70)
-        print("Annonces distinctes page 1 :", len(page1))
-        print("Annonces distinctes page 2 :", len(page2))
-        print("Annonces communes aux deux pages :", len(overlap))
-        if overlap:
-            print("ATTENTION : les mêmes fiches apparaissent sur les deux pages :")
-            for href in overlap:
-                print("-", href)
-        else:
-            print("OK : aucune fiche commune entre les deux premières pages.")
+            print("\nRECHERCHE :", KEYWORD)
+            print("URL résultat :", page.url)
+            page1 = report_search(page)
+            inspect_cards(page, page1, "PAGE 1")
 
-        inspect_pages(browser, page1, page2)
+            # Vérification de la pagination sans ouvrir les fiches.
+            next_page = page.locator("a[href*='page=2']").last
+            if next_page.count():
+                href2 = next_page.get_attribute("href")
+                page2_url = urljoin(page.url, href2)
+                print("\nURL PAGE 2 :", page2_url)
+                page.goto(page2_url, wait_until="domcontentloaded", timeout=60000)
+                page.wait_for_timeout(2500)
+                page2 = report_search(page)
+                inspect_cards(page, page2, "PAGE 2")
+            else:
+                page2 = []
+                print("\nLien vers la page 2 introuvable.")
 
-        print("\n" + "=" * 70)
-        print("FIN DU DIAGNOSTIC")
-        print("=" * 70)
-        print("Les annonces des pages 1 et 2 de la recherche 'scientifique' ont été ouvertes individuellement.")
-        print("Aucune modification n'a été faite aux dépôts de veille de production.")
-        browser.close()
+            overlap = sorted(set(page1) & set(page2))
+            print("\n" + "=" * 80)
+            print("COMPARAISON PAGE 1 / PAGE 2")
+            print("=" * 80)
+            print("Annonces distinctes page 1 :", len(page1))
+            print("Annonces distinctes page 2 :", len(page2))
+            print("Annonces communes :", len(overlap))
+            if overlap:
+                print("ATTENTION :")
+                for href in overlap:
+                    print("-", href)
+            else:
+                print("OK : aucune fiche commune.")
+
+            print("\n" + "=" * 80)
+            print("FIN DU DIAGNOSTIC")
+            print("=" * 80)
+            print("Aucune fiche détail n'a été ouverte : l'extraction est faite directement depuis les cartes de résultats.")
+            print("Aucun dépôt de production n'a été modifié.")
+        finally:
+            browser.close()
 
 
 if __name__ == "__main__":
