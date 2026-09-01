@@ -2,6 +2,9 @@ name: Diagnostic BDC
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   diagnostic:
