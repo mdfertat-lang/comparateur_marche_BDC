@@ -36,11 +36,12 @@ def report_page(page, title):
     m = re.search(r"Nombre de résultats\s*:?\s*(\d+)", text, re.I)
     print("Nombre de résultats affiché :", m.group(1) if m else "non détecté")
     unique, all_hrefs = unique_detail_hrefs(page)
+    distribution = Counter(Counter(all_hrefs).values())
     print("Liens de fiches dans le DOM :", len(all_hrefs))
     print("Annonces DISTINCTES détectées :", len(unique))
     print("Copies supplémentaires dans le DOM :", len(all_hrefs) - len(unique))
-    print("Répartition des copies :", dict(sorted(Counter(all_hrefs).values() if False else Counter(Counter(all_hrefs).values()).items())))
-    print("\n--- LIENS DISTINCTS DES 10 ANNONCES DE CETTE PAGE ---")
+    print("Répartition des copies :", dict(sorted(distribution.items())))
+    print("\n--- LIENS DISTINCTS DES ANNONCES DE CETTE PAGE ---")
     for i, href in enumerate(unique, 1):
         print(f"{i}. {href}")
     return unique
@@ -51,16 +52,23 @@ def find_keyword_input(page):
     return loc.first if loc.count() else None
 
 
-def click_search(page):
-    loc = page.get_by_role("button", name=re.compile("Lancer la recherche", re.I))
-    if loc.count():
-        loc.first.click()
+def submit_search(page):
+    # Le diagnostic ne dépend plus du texte du bouton. On soumet le formulaire
+    # directement, comme le fait le portail, après avoir rempli le champ keyword.
+    form = page.locator("form").filter(has=page.locator("#search_consultation_entreprise_keyword")).first
+    if form.count():
+        try:
+            with page.expect_navigation(wait_until="domcontentloaded", timeout=20000):
+                form.evaluate("form => form.submit()")
+            return True
+        except PlaywrightTimeoutError:
+            return True
+    # Secours : appuyer sur Entrée dans le champ.
+    try:
+        page.locator("#search_consultation_entreprise_keyword").press("Enter")
         return True
-    return False
-
-
-def page_url_from_link(current_url, href):
-    return urljoin(current_url, href)
+    except Exception:
+        return False
 
 
 def main():
@@ -77,21 +85,18 @@ def main():
         if keyword_input is None:
             raise SystemExit("Champ de recherche introuvable")
         keyword_input.fill(KEYWORD)
-        if not click_search(page):
-            raise SystemExit("Bouton de recherche introuvable")
-        try:
-            page.wait_for_load_state("domcontentloaded", timeout=20000)
-        except PlaywrightTimeoutError:
-            pass
+        if not submit_search(page):
+            raise SystemExit("Impossible de soumettre la recherche")
         page.wait_for_timeout(2500)
 
         page1 = report_page(page, f"ÉTAPE 2 — {KEYWORD.upper()} — PAGE 1")
 
-        # Construire l'URL de la page 2 à partir du lien de pagination du site.
+        # Le portail fournit directement le lien vers la page 2 avec tous les
+        # paramètres de recherche. On le suit sans reconstruire l'URL.
         next_page = page.locator("a[href*='page=2']").last
         if next_page.count():
             href2 = next_page.get_attribute("href")
-            page2_url = page_url_from_link(page.url, href2)
+            page2_url = urljoin(page.url, href2)
             print("\nURL PAGE 2 :", page2_url)
             page.goto(page2_url, wait_until="domcontentloaded")
             page.wait_for_timeout(2500)
