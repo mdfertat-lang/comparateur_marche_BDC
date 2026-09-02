@@ -19,70 +19,112 @@ def unique_hrefs(page):
         href = links.nth(i).get_attribute("href") or ""
         if href:
             all_hrefs.append(urljoin(page.url, href))
-    return list(dict.fromkeys(all_hrefs)), all_hrefs
+    unique = list(dict.fromkeys(all_hrefs))
+    return unique, all_hrefs
 
 
 def find_card(page, href):
-    """Trouve le conteneur de résultat correspondant au lien sans ouvrir la fiche détail."""
+    """Trouve le conteneur complet de la carte directement dans la page de résultats."""
     path = href.split(DETAIL_LINK, 1)[-1].strip("/")
     link = page.locator(f"a[href*='{path}']").first
     if not link.count():
         return None
 
     current = link
-    best = None
     for _ in range(10):
         try:
-            text = current.inner_text()
-            html = current.evaluate("e => e.outerHTML")
-            if text and len(clean(text)) >= 80:
-                best = (clean(text), html)
-                # Une carte doit contenir au moins deux libellés connus.
-                known = sum(
-                    label.lower() in text.lower()
-                    for label in ["référence", "objet", "acheteur", "date limite", "lieu d'exécution"]
-                )
-                if known >= 2:
-                    return best
+            # La classe entreprise__card identifie directement la carte complète.
+            if current.evaluate("e => e.classList.contains('entreprise__card')"):
+                return current
         except Exception:
             pass
         current = current.locator("xpath=..").first
 
-    return best
+    # Fallback : recherche depuis le lien dans les ancêtres.
+    current = link
+    for _ in range(10):
+        try:
+            class_attr = current.get_attribute("class") or ""
+            if "entreprise__card" in class_attr:
+                return current
+        except Exception:
+            pass
+        current = current.locator("xpath=..").first
+
+    return None
 
 
-def extract_from_card(text):
-    """Extrait les champs directement depuis le texte de la carte de résultat."""
-    lines = [clean(x) for x in text.splitlines() if clean(x)]
-    out = {}
+def extract_from_card(card):
+    """Extrait tous les champs directement depuis une carte BDC, sans ouvrir la fiche détail."""
+    out = {
+        "Référence": "",
+        "Objet": "",
+        "Acheteur": "",
+        "Date limite de remise des devis": "",
+        "Heure": "",
+        "Lieu d'exécution": "",
+    }
 
-    labels = [
-        "Référence",
-        "Objet",
-        "Acheteur",
-        "Date limite de remise des devis",
-        "Date limite de réception des devis",
-        "Lieu d'exécution",
-    ]
+    # ---------------------------------------------------------
+    # Référence / Objet / Acheteur
+    # ---------------------------------------------------------
+    links = card.locator("a.table__links")
+    for i in range(links.count()):
+        a = links.nth(i)
+        text = clean(a.inner_text())
 
-    # Cas normal : libellé et valeur sur la même ligne, ou valeur sur la ligne suivante.
-    for i, line in enumerate(lines):
-        for label in labels:
-            pattern = rf"^{re.escape(label)}\s*:?\s*(.*)$"
-            m = re.match(pattern, line, re.I)
-            if not m:
-                continue
-            value = clean(m.group(1))
-            if not value and i + 1 < len(lines):
-                value = lines[i + 1]
-            if value:
-                out[label] = value
+        if text.startswith("Référence :"):
+            out["Référence"] = clean(text.split(":", 1)[1])
+        elif text.startswith("Objet :"):
+            out["Objet"] = clean(text.split(":", 1)[1])
+        elif text.startswith("Acheteur :"):
+            out["Acheteur"] = clean(text.split(":", 1)[1])
 
-    # Le site peut afficher la référence sous forme de #XXXX sans libellé exploitable.
-    if "Référence" not in out:
-        m = re.search(r"#\s*([A-Za-z0-9À-ÿ][A-Za-z0-9À-ÿ./_\- ]{1,100})", text)
-        if m:
-            out["Référence"] = clean(m.group(1))
+    # ---------------------------------------------------------
+    # Date limite / Heure / Lieu
+    # ---------------------------------------------------------
+    right = card.locator(".entreprise__rightSubCard--top").first
+    if right.count():
+        spans = right.locator("span")
+
+        for i in range(spans.count()):
+            span = spans.nth(i)
+            text = clean(span.inner_text())
+
+            # Date : on cible le span contenant l'icône calendrier.
+            if span.locator(".fa-calendar").count():
+                m = re.search(r"\d{2}/\d{2}/\d{4}", text)
+                if m:
+                    out["Date limite de remise des devis"] = m.group(0)
+
+            # Heure : on cible le span contenant l'icône horloge.
+            elif span.locator(".fa-clock").count():
+                m = re.search(r"\d{1,2}:\d{2}", text)
+                if m:
+                    out["Heure"] = m.group(0)
+
+            # Lieu : le site met la valeur dans data-bs-title.
+            elif span.get_attribute("data-bs-title"):
+                title = clean(span.get_attribute("data-bs-title"))
+                if title:
+                    out["Lieu d'exécution"] = title
+
+        # Fallback robuste pour le lieu si data-bs-title n'est pas présent.
+        if not out["Lieu d'exécution"]:
+            location = right.locator(".fa-location-dot").first
+            if location.count():
+                parent = location.locator("xpath=ancestor::span[1]")
+                if parent.count():
+                    text = clean(parent.inner_text())
+                    if text:
+                        out["Lieu d'exécution"] = text
+
+    if out["Date limite de remise des devis"] and out["Heure"]:
+        out["Date limite"] = (
+            f"{out['Date limite de remise des devis']} {out['Heure']}"
+        )
+    else:
+        out["Date limite"] = out["Date limite de remise des devis"]
 
     return out
 
@@ -92,11 +134,14 @@ def report_search(page):
     m = re.search(r"Nombre de résultats\s*:?\s*(\d+)", body, re.I)
     unique, all_hrefs = unique_hrefs(page)
 
+    counts = Counter(all_hrefs)
+    copy_distribution = Counter(counts.values())
+
     print("Nombre de résultats affiché :", m.group(1) if m else "NON DÉTECTÉ")
     print("Liens DOM :", len(all_hrefs))
     print("Annonces distinctes :", len(unique))
     print("Copies DOM :", len(all_hrefs) - len(unique))
-    print("Répartition des copies :", dict(sorted(Counter(all_hrefs).values() and Counter(Counter(all_hrefs).values()).items())))
+    print("Répartition des copies :", dict(sorted(copy_distribution.items())))
     return unique
 
 
@@ -108,42 +153,43 @@ def inspect_cards(page, hrefs, page_name):
     for i, href in enumerate(hrefs, 1):
         print(f"\n--- ANNONCE {i}/{len(hrefs)} ---")
         print("URL :", href)
-        result = find_card(page, href)
-        if not result:
+
+        card = find_card(page, href)
+        if not card:
             print("CARTE INTROUVABLE")
             continue
 
-        text, html = result
-        print("TEXTE DE LA CARTE :")
-        print(text)
+        fields = extract_from_card(card)
 
-        fields = extract_from_card(text)
-        print("\nCHAMPS INTERPRÉTÉS :")
-        for key in ["Référence", "Objet", "Acheteur", "Date limite de remise des devis", "Date limite de réception des devis", "Lieu d'exécution"]:
-            if key in fields:
-                print(f"{key} = {fields[key]}")
+        print("Référence :", fields["Référence"] or "NON DÉTECTÉE")
+        print("Objet :", fields["Objet"] or "NON DÉTECTÉ")
+        print("Acheteur :", fields["Acheteur"] or "NON DÉTECTÉ")
+        print("Date limite de remise des devis :", fields["Date limite de remise des devis"] or "NON DÉTECTÉE")
+        print("Heure :", fields["Heure"] or "NON DÉTECTÉE")
+        print("Date limite :", fields["Date limite"] or "NON DÉTECTÉE")
+        print("Lieu d'exécution :", fields["Lieu d'exécution"] or "NON DÉTECTÉ")
 
         missing = []
-        if "Référence" not in fields:
-            missing.append("Référence")
-        if "Objet" not in fields:
-            missing.append("Objet")
-        if "Acheteur" not in fields:
-            missing.append("Acheteur")
-        if not any(k in fields for k in ["Date limite de remise des devis", "Date limite de réception des devis"]):
+        for key in ["Référence", "Objet", "Acheteur"]:
+            if not fields[key]:
+                missing.append(key)
+        if not fields["Date limite de remise des devis"]:
             missing.append("Date limite")
-        print("MANQUANTS :", ", ".join(missing) if missing else "AUCUN")
+        if not fields["Heure"]:
+            missing.append("Heure")
+        if not fields["Lieu d'exécution"]:
+            missing.append("Lieu d'exécution")
 
-        # HTML limité au cas où la structure doit encore être corrigée.
-        if missing:
-            print("\nHTML DU CONTENEUR (pour correction) :")
-            print(html[:10000])
+        print("MANQUANTS :", ", ".join(missing) if missing else "AUCUN")
 
 
 def main():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        page = browser.new_page(viewport={"width": 1440, "height": 1200}, locale="fr-FR")
+        page = browser.new_page(
+            viewport={"width": 1440, "height": 1200},
+            locale="fr-FR",
+        )
         page.set_default_timeout(20000)
 
         try:
@@ -173,7 +219,7 @@ def main():
             page1 = report_search(page)
             inspect_cards(page, page1, "PAGE 1")
 
-            # Vérification de la pagination sans ouvrir les fiches.
+            # Vérification de la pagination sans ouvrir les fiches détail.
             next_page = page.locator("a[href*='page=2']").last
             if next_page.count():
                 href2 = next_page.get_attribute("href")
@@ -204,8 +250,7 @@ def main():
             print("\n" + "=" * 80)
             print("FIN DU DIAGNOSTIC")
             print("=" * 80)
-            print("Aucune fiche détail n'a été ouverte : l'extraction est faite directement depuis les cartes de résultats.")
-            print("Aucun dépôt de production n'a été modifié.")
+            print("Aucune fiche détail n'a été ouverte : toutes les informations sont extraites directement des cartes de résultats.")
         finally:
             browser.close()
 
