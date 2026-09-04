@@ -100,6 +100,15 @@ def find_j_and_j_minus_1(repo):
     return j_commit, j1_commit
 
 
+def get_reference(item):
+    """Retourne la référence quel que soit le nom de champ utilisé par la source."""
+    for key in ("Référence", "reference", "référence", "Reference"):
+        value = item.get(key)
+        if value not in (None, ""):
+            return value
+    return ""
+
+
 def normalize_reference(value):
     value = str(value or "").strip().upper()
     value = unicodedata.normalize("NFKC", value)
@@ -115,16 +124,16 @@ def extract_annonces(report):
 
 def compare_reports(current, previous):
     previous_refs = {
-        normalize_reference(item.get("Référence"))
+        normalize_reference(get_reference(item))
         for item in extract_annonces(previous)
-        if normalize_reference(item.get("Référence"))
+        if normalize_reference(get_reference(item))
     }
 
     nouvelles = []
     seen = set()
 
     for item in extract_annonces(current):
-        reference = normalize_reference(item.get("Référence"))
+        reference = normalize_reference(get_reference(item))
         if not reference or reference in seen:
             continue
         if reference not in previous_refs:
