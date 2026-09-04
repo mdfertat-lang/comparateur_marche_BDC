@@ -68,37 +68,44 @@ def get_resultats_history(repo, max_pages=5):
     return commits
 
 
-def find_j_and_j_minus_1(repo):
+def find_j_j_minus_1_j_minus_2(repo):
     commits = get_resultats_history(repo)
     if not commits:
         raise RuntimeError(f"Aucun commit trouvé pour resultats.json dans {repo}.")
 
     today = datetime.now(timezone.utc).date()
-    yesterday = today - timedelta(days=1)
-
-    j_commit = None
-    j1_commit = None
+    target_dates = {
+        today: "j",
+        today - timedelta(days=1): "j1",
+        today - timedelta(days=2): "j2",
+    }
+    found = {"j": None, "j1": None, "j2": None}
 
     for commit in commits:
         value = get_commit_date(commit)
         if not value:
             continue
+
         date = datetime.fromisoformat(value.replace("Z", "+00:00")).date()
+        key = target_dates.get(date)
 
-        if date == today and j_commit is None:
-            j_commit = commit
-        elif date == yesterday and j1_commit is None:
-            j1_commit = commit
+        if key and found[key] is None:
+            found[key] = commit
 
-        if j_commit and j1_commit:
+        if all(found.values()):
             break
 
-    if not j_commit:
-        raise RuntimeError(f"Aucun resultats.json correspondant à J ({today}) trouvé dans {repo}.")
-    if not j1_commit:
-        raise RuntimeError(f"Aucun resultats.json correspondant à J-1 ({yesterday}) trouvé dans {repo}.")
+    labels = {
+        "j": f"J ({today})",
+        "j1": f"J-1 ({today - timedelta(days=1)})",
+        "j2": f"J-2 ({today - timedelta(days=2)})",
+    }
 
-    return j_commit, j1_commit
+    for key, label in labels.items():
+        if not found[key]:
+            raise RuntimeError(f"Aucun resultats.json correspondant à {label} trouvé dans {repo}.")
+
+    return found["j"], found["j1"], found["j2"]
 
 
 def get_reference(item):
@@ -123,12 +130,15 @@ def extract_annonces(report):
     return annonces
 
 
-def compare_reports(current, previous):
-    previous_refs = {
-        normalize_reference(get_reference(item))
-        for item in extract_annonces(previous)
-        if normalize_reference(get_reference(item))
-    }
+def compare_reports(current, previous_reports):
+    previous_refs = set()
+
+    for report in previous_reports:
+        previous_refs.update(
+            normalize_reference(get_reference(item))
+            for item in extract_annonces(report)
+            if normalize_reference(get_reference(item))
+        )
 
     nouvelles = []
     seen = set()
@@ -147,16 +157,17 @@ def compare_reports(current, previous):
 def build_output():
     output = {
         "date_execution": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "comparaison": "J versus J-1",
+        "comparaison": "J versus J-1 et J-2",
         "bdc": {},
         "marches_publics": {},
     }
 
     for key, repo in SOURCES.items():
-        j_commit, j1_commit = find_j_and_j_minus_1(repo)
+        j_commit, j1_commit, j2_commit = find_j_j_minus_1_j_minus_2(repo)
         current = get_file_from_ref(repo, j_commit["sha"])
-        previous = get_file_from_ref(repo, j1_commit["sha"])
-        nouvelles = compare_reports(current, previous)
+        previous_j1 = get_file_from_ref(repo, j1_commit["sha"])
+        previous_j2 = get_file_from_ref(repo, j2_commit["sha"])
+        nouvelles = compare_reports(current, [previous_j1, previous_j2])
 
         output[key] = {
             "depot_source": repo,
@@ -164,6 +175,8 @@ def build_output():
             "date_j": get_commit_date(j_commit),
             "commit_j_moins_1": j1_commit["sha"],
             "date_j_moins_1": get_commit_date(j1_commit),
+            "commit_j_moins_2": j2_commit["sha"],
+            "date_j_moins_2": get_commit_date(j2_commit),
             "nombre_nouvelles": len(nouvelles),
             "annonces": nouvelles,
         }
@@ -181,7 +194,7 @@ def envoyer_email(output):
     lignes.append("NOUVELLES ANNONCES — MARCHÉS PUBLICS MAROCAINS")
     lignes.append("=" * 60)
     lignes.append("")
-    lignes.append("Comparaison : J versus J-1")
+    lignes.append("Comparaison : J versus J-1 et J-2")
     lignes.append("")
 
     total = output["bdc"]["nombre_nouvelles"] + output["marches_publics"]["nombre_nouvelles"]
@@ -259,6 +272,7 @@ def main():
         json.dump(output, file, ensure_ascii=False, indent=2)
 
     print("Comparaison terminée.")
+    print("Comparaison : J versus J-1 et J-2")
     print("BDC :", output["bdc"]["nombre_nouvelles"], "nouvelle(s)")
     print("Marchés publics :", output["marches_publics"]["nombre_nouvelles"], "nouvelle(s)")
     print("Fichier créé : nouveautes.json")
