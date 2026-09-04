@@ -24,6 +24,7 @@ jobs:
       - name: Lancer la comparaison
         env:
           GITHUB_TOKEN: ${{ secrets.SOURCES_TOKEN }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: python comparer.py
 
       - name: Publier nouveautes.json
