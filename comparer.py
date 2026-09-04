@@ -1,7 +1,9 @@
 import json
 import os
+import smtplib
 import unicodedata
 from datetime import datetime, timedelta, timezone
+from email.mime.text import MIMEText
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
@@ -63,7 +65,6 @@ def get_resultats_history(repo, max_pages=5):
         if len(batch) < 100:
             break
 
-    # Les commits sont renvoyés du plus récent au plus ancien.
     return commits
 
 
@@ -170,6 +171,87 @@ def build_output():
     return output
 
 
+def envoyer_email(output):
+    email = "mdfertat@gmail.com"
+    mot_de_passe = os.environ["EMAIL_PASSWORD"]
+    date_du_jour = datetime.now().strftime("%d/%m/%Y")
+    sujet = f"Nouvelles annonces marchés publics et BDC - {date_du_jour}"
+
+    lignes = []
+    lignes.append("NOUVELLES ANNONCES — MARCHÉS PUBLICS MAROCAINS")
+    lignes.append("=" * 60)
+    lignes.append("")
+    lignes.append("Comparaison : J versus J-1")
+    lignes.append("")
+
+    total = output["bdc"]["nombre_nouvelles"] + output["marches_publics"]["nombre_nouvelles"]
+    lignes.append(f"Total : {total} nouvelle(s) annonce(s).")
+    lignes.append("")
+
+    for key, titre in (("bdc", "BONS DE COMMANDE (BDC)"), ("marches_publics", "MARCHÉS PUBLICS")):
+        annonces = output[key]["annonces"]
+
+        lignes.append("=" * 60)
+        lignes.append(titre)
+        lignes.append("=" * 60)
+        lignes.append("")
+
+        if not annonces:
+            lignes.append("Aucune nouvelle annonce.")
+            lignes.append("")
+            continue
+
+        lignes.append(f"{len(annonces)} nouvelle(s) annonce(s).")
+        lignes.append("")
+
+        for i, annonce in enumerate(annonces, start=1):
+            lignes.append("-" * 60)
+            lignes.append(f"ANNONCE {i}")
+            lignes.append("-" * 60)
+
+            reference = get_reference(annonce)
+            objet = str(annonce.get("objet", "")).replace("Objet :", "").strip()
+            acheteur = str(annonce.get("acheteur", "")).replace("Acheteur public :", "").strip()
+            lieu = str(annonce.get("lieu", "")).replace("Lieu d'exécution :", "").strip()
+            date_limite = annonce.get("date_limite", "")
+            mot_cle = annonce.get("mot_cle") or annonce.get("mot_cles", "")
+
+            if isinstance(mot_cle, list):
+                mot_cle = ", ".join(str(x) for x in mot_cle)
+
+            lignes.append(f"Référence : {reference}")
+            lignes.append(f"Objet : {objet}")
+            lignes.append(f"Acheteur public : {acheteur}")
+            lignes.append(f"Lieu d'exécution : {lieu}")
+            lignes.append(f"Date limite : {date_limite}")
+            lignes.append(f"Mot-clé trouvé : {mot_cle}")
+
+            if annonce.get("alerte_date"):
+                lignes.append(f"ALERTE : {annonce['alerte_date']}")
+
+            if annonce.get("url"):
+                lignes.append(f"Lien : {annonce['url']}")
+
+            lignes.append("")
+
+    contenu = "\n".join(lignes)
+    message = MIMEText(contenu, "plain", "utf-8")
+    message["Subject"] = sujet
+    message["From"] = email
+    message["To"] = email
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as serveur:
+        serveur.login(email, mot_de_passe)
+        serveur.send_message(message)
+
+    print("")
+    print("========================================")
+    print("EMAIL ENVOYÉ")
+    print("========================================")
+    print("Expéditeur :", email)
+    print("Destinataire :", email)
+
+
 def main():
     output = build_output()
 
@@ -180,6 +262,8 @@ def main():
     print("BDC :", output["bdc"]["nombre_nouvelles"], "nouvelle(s)")
     print("Marchés publics :", output["marches_publics"]["nombre_nouvelles"], "nouvelle(s)")
     print("Fichier créé : nouveautes.json")
+
+    envoyer_email(output)
 
 
 if __name__ == "__main__":
