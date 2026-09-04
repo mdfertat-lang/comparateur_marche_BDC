@@ -1,0 +1,22 @@
+{
+  "date_execution": "2026-09-04T08:47:06+00:00",
+  "comparaison": "J versus J-1",
+  "bdc": {
+    "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
+    "commit_j": "6fba8281110cf7bc6ff5bc264c8a8cdd6b48bd96",
+    "date_j": "2026-09-04T02:29:14Z",
+    "commit_j_moins_1": "60665525985d98dd3a250942c3f7fa93731fecc5",
+    "date_j_moins_1": "2026-09-03T10:38:29Z",
+    "nombre_nouvelles": 0,
+    "annonces": []
+  },
+  "marches_publics": {
+    "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
+    "commit_j": "e9d6feafb127eedf047dc7e5cc619cff75346828",
+    "date_j": "2026-09-04T02:36:34Z",
+    "commit_j_moins_1": "ecdb4f8eb4cb3d2ea153c4847f21a066a56c5880",
+    "date_j_moins_1": "2026-09-03T12:09:24Z",
+    "nombre_nouvelles": 0,
+    "annonces": []
+  }
+}
