@@ -3,7 +3,9 @@ name: Comparer BDC et marchés publics
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 2 * * *"
+    # 07:30 en UTC+4 = 03:30 UTC.
+    # Les veilles ont ainsi le temps de produire resultats.json avant la comparaison.
+    - cron: "30 3 * * *"
 
 permissions:
   contents: write
