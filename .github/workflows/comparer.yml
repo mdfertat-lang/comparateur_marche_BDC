@@ -1,0 +1,45 @@
+name: Comparer BDC et marchés publics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  comparaison:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Lancer la comparaison
+        env:
+          GITHUB_TOKEN: ${{ secrets.SOURCES_TOKEN }}
+        run: python comparer.py
+
+      - name: Publier nouveautes.json
+        if: success() && hashFiles('nouveautes.json') != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nouveautes.json
+          git diff --cached --quiet || git commit -m "Mettre à jour nouveautes.json"
+          git push
+
+      - name: Sauvegarder le résultat
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultat-comparaison
+          path: nouveautes.json
+          if-no-files-found: ignore
+          retention-days: 7
