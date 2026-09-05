@@ -20,16 +20,12 @@ def github_get(url):
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if not token:
         raise RuntimeError("GITHUB_TOKEN ou GH_TOKEN est requis.")
-
-    request = Request(
-        url,
-        headers={
-            "Accept": "application/vnd.github+json",
-            "Authorization": f"Bearer {token}",
-            "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "comparateur-marche-bdc",
-        },
-    )
+    request = Request(url, headers={
+        "Accept": "application/vnd.github+json",
+        "Authorization": f"Bearer {token}",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "User-Agent": "comparateur-marche-bdc",
+    })
     with urlopen(request, timeout=30) as response:
         return json.load(response)
 
@@ -40,7 +36,6 @@ def get_file_from_ref(repo, ref):
     data = github_get(f"{API}/repos/{owner}/{name}/contents/{path}?ref={quote(ref, safe='')}")
     if data.get("encoding") != "base64":
         raise RuntimeError(f"Format inattendu pour resultats.json dans {repo}@{ref}.")
-
     import base64
     return json.loads(base64.b64decode(data["content"]).decode("utf-8"))
 
@@ -52,19 +47,13 @@ def get_commit_date(commit):
 def get_resultats_history(repo, max_pages=5):
     owner, name = repo.split("/", 1)
     commits = []
-
     for page in range(1, max_pages + 1):
-        url = (
-            f"{API}/repos/{owner}/{name}/commits"
-            f"?path=resultats.json&per_page=100&page={page}"
-        )
-        batch = github_get(url)
+        batch = github_get(f"{API}/repos/{owner}/{name}/commits?path=resultats.json&per_page=100&page={page}")
         if not batch:
             break
         commits.extend(batch)
         if len(batch) < 100:
             break
-
     return commits
 
 
@@ -74,34 +63,25 @@ def find_j_j_minus_1_j_minus_2(repo):
         raise RuntimeError(f"Aucun commit trouvé pour resultats.json dans {repo}.")
 
     today = datetime.now(timezone.utc).date()
-    target_dates = {
-        today: "j",
-        today - timedelta(days=1): "j1",
-        today - timedelta(days=2): "j2",
-    }
+    target_dates = {today: "j", today - timedelta(days=1): "j1", today - timedelta(days=2): "j2"}
     found = {"j": None, "j1": None, "j2": None}
 
     for commit in commits:
         value = get_commit_date(commit)
         if not value:
             continue
-
         date = datetime.fromisoformat(value.replace("Z", "+00:00")).date()
         key = target_dates.get(date)
-
         if key and found[key] is None:
             found[key] = commit
-
         if all(found.values()):
             break
 
-    labels = {
+    for key, label in {
         "j": f"J ({today})",
         "j1": f"J-1 ({today - timedelta(days=1)})",
         "j2": f"J-2 ({today - timedelta(days=2)})",
-    }
-
-    for key, label in labels.items():
+    }.items():
         if not found[key]:
             raise RuntimeError(f"Aucun resultats.json correspondant à {label} trouvé dans {repo}.")
 
@@ -109,7 +89,6 @@ def find_j_j_minus_1_j_minus_2(repo):
 
 
 def get_reference(item):
-    """Retourne la référence quel que soit le nom de champ utilisé par la source."""
     for key in ("Référence", "reference", "référence", "Reference"):
         value = item.get(key)
         if value not in (None, ""):
@@ -132,7 +111,6 @@ def extract_annonces(report):
 
 def compare_reports(current, previous_reports):
     previous_refs = set()
-
     for report in previous_reports:
         previous_refs.update(
             normalize_reference(get_reference(item))
@@ -142,7 +120,6 @@ def compare_reports(current, previous_reports):
 
     nouvelles = []
     seen = set()
-
     for item in extract_annonces(current):
         reference = normalize_reference(get_reference(item))
         if not reference or reference in seen:
@@ -150,7 +127,6 @@ def compare_reports(current, previous_reports):
         if reference not in previous_refs:
             nouvelles.append(item)
             seen.add(reference)
-
     return nouvelles
 
 
@@ -168,7 +144,6 @@ def build_output():
         previous_j1 = get_file_from_ref(repo, j1_commit["sha"])
         previous_j2 = get_file_from_ref(repo, j2_commit["sha"])
         nouvelles = compare_reports(current, [previous_j1, previous_j2])
-
         output[key] = {
             "depot_source": repo,
             "commit_j": j_commit["sha"],
@@ -180,103 +155,78 @@ def build_output():
             "nombre_nouvelles": len(nouvelles),
             "annonces": nouvelles,
         }
-
     return output
 
 
 def envoyer_email(output):
-    email = "mdfertat@gmail.com"
+    email_expediteur = "mdfertat@gmail.com"
+    email_destinataire = "m.fertat@t4u.ma"
     mot_de_passe = os.environ["EMAIL_PASSWORD"]
-    date_du_jour = datetime.now().strftime("%d/%m/%Y")
+    date_du_jour = datetime.now(timezone.utc).strftime("%d/%m/%Y")
     sujet = f"Nouvelles annonces marchés publics et BDC - {date_du_jour}"
 
-    lignes = []
-    lignes.append("NOUVELLES ANNONCES — MARCHÉS PUBLICS MAROCAINS")
-    lignes.append("=" * 60)
-    lignes.append("")
-    lignes.append("Comparaison : J versus J-1 et J-2")
-    lignes.append("")
-
+    lignes = [
+        "NOUVELLES ANNONCES — MARCHÉS PUBLICS MAROCAINS",
+        "=" * 60,
+        "",
+        "Comparaison : J versus J-1 et J-2",
+        "",
+    ]
     total = output["bdc"]["nombre_nouvelles"] + output["marches_publics"]["nombre_nouvelles"]
     lignes.append(f"Total : {total} nouvelle(s) annonce(s).")
     lignes.append("")
 
     for key, titre in (("bdc", "BONS DE COMMANDE (BDC)"), ("marches_publics", "MARCHÉS PUBLICS")):
         annonces = output[key]["annonces"]
-
-        lignes.append("=" * 60)
-        lignes.append(titre)
-        lignes.append("=" * 60)
-        lignes.append("")
-
+        lignes.extend(["=" * 60, titre, "=" * 60, ""])
         if not annonces:
-            lignes.append("Aucune nouvelle annonce.")
-            lignes.append("")
+            lignes.extend(["Aucune nouvelle annonce.", ""])
             continue
-
-        lignes.append(f"{len(annonces)} nouvelle(s) annonce(s).")
-        lignes.append("")
-
+        lignes.extend([f"{len(annonces)} nouvelle(s) annonce(s).", ""])
         for i, annonce in enumerate(annonces, start=1):
-            lignes.append("-" * 60)
-            lignes.append(f"ANNONCE {i}")
-            lignes.append("-" * 60)
-
+            lignes.extend(["-" * 60, f"ANNONCE {i}", "-" * 60])
             reference = get_reference(annonce)
             objet = str(annonce.get("objet", "")).replace("Objet :", "").strip()
             acheteur = str(annonce.get("acheteur", "")).replace("Acheteur public :", "").strip()
             lieu = str(annonce.get("lieu", "")).replace("Lieu d'exécution :", "").strip()
             date_limite = annonce.get("date_limite", "")
             mot_cle = annonce.get("mot_cle") or annonce.get("mot_cles", "")
-
             if isinstance(mot_cle, list):
                 mot_cle = ", ".join(str(x) for x in mot_cle)
-
-            lignes.append(f"Référence : {reference}")
-            lignes.append(f"Objet : {objet}")
-            lignes.append(f"Acheteur public : {acheteur}")
-            lignes.append(f"Lieu d'exécution : {lieu}")
-            lignes.append(f"Date limite : {date_limite}")
-            lignes.append(f"Mot-clé trouvé : {mot_cle}")
-
+            lignes.extend([
+                f"Référence : {reference}", f"Objet : {objet}", f"Acheteur public : {acheteur}",
+                f"Lieu d'exécution : {lieu}", f"Date limite : {date_limite}", f"Mot-clé trouvé : {mot_cle}",
+            ])
             if annonce.get("alerte_date"):
                 lignes.append(f"ALERTE : {annonce['alerte_date']}")
-
             if annonce.get("url"):
                 lignes.append(f"Lien : {annonce['url']}")
-
             lignes.append("")
 
     contenu = "\n".join(lignes)
     message = MIMEText(contenu, "plain", "utf-8")
     message["Subject"] = sujet
-    message["From"] = email
-    message["To"] = email
+    message["From"] = email_expediteur
+    message["To"] = email_destinataire
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as serveur:
-        serveur.login(email, mot_de_passe)
+        serveur.login(email_expediteur, mot_de_passe)
         serveur.send_message(message)
 
-    print("")
-    print("========================================")
     print("EMAIL ENVOYÉ")
-    print("========================================")
-    print("Expéditeur :", email)
-    print("Destinataire :", email)
+    print("Expéditeur :", email_expediteur)
+    print("Destinataire :", email_destinataire)
 
 
 def main():
     output = build_output()
-
     with open("nouveautes.json", "w", encoding="utf-8") as file:
         json.dump(output, file, ensure_ascii=False, indent=2)
-
     print("Comparaison terminée.")
     print("Comparaison : J versus J-1 et J-2")
     print("BDC :", output["bdc"]["nombre_nouvelles"], "nouvelle(s)")
     print("Marchés publics :", output["marches_publics"]["nombre_nouvelles"], "nouvelle(s)")
     print("Fichier créé : nouveautes.json")
-
     envoyer_email(output)
 
 
