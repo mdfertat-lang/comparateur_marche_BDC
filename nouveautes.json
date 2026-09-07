@@ -1,43 +1,28 @@
 {
-  "date_execution": "2026-09-06T03:34:07+00:00",
+  "date_execution": "2026-09-07T03:35:56+00:00",
   "comparaison": "J versus J-1 et J-2",
   "bdc": {
     "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
-    "commit_j": "53c744ea390caa6c13cd91770d7ead1c060b3978",
-    "date_j": "2026-09-06T02:29:11Z",
-    "commit_j_moins_1": "47c5748418b986859965e4ed1cedc525292bcb15",
-    "date_j_moins_1": "2026-09-05T02:29:08Z",
-    "commit_j_moins_2": "6fba8281110cf7bc6ff5bc264c8a8cdd6b48bd96",
-    "date_j_moins_2": "2026-09-04T02:29:14Z",
-    "nombre_nouvelles": 2,
+    "commit_j": "bf326e4a34a7ce4e417dbf6a626c3a7d92695e14",
+    "date_j": "2026-09-07T02:29:31Z",
+    "commit_j_moins_1": "53c744ea390caa6c13cd91770d7ead1c060b3978",
+    "date_j_moins_1": "2026-09-06T02:29:11Z",
+    "commit_j_moins_2": "47c5748418b986859965e4ed1cedc525292bcb15",
+    "date_j_moins_2": "2026-09-05T02:29:08Z",
+    "nombre_nouvelles": 1,
     "annonces": [
       {
-        "reference": "32/FSTE-2026",
-        "objet": "Restauration au profit des administrateurs chargés des inscriptions ainsi que des membres des clubs de la FSTE mobilisés pour accompagner l’administration dans l’organisation et le déroulement des opérations d’inscription des nouveaux bacheliers à la Faculté des Sciences et Techniques d’Errachidia, les 08, 09 et 10 septembre 2026.",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES D'ERRACHIDIA",
-        "date_limite": "07/09/2026 12:30",
-        "lieu": "MAROC, ERRACHIDIA",
+        "reference": "Bc-110-isss-2026",
+        "objet": "Prestation de restauration au profit du personnel intervenant au concours d’accès à l’Institut Supérieur des Sciences de la Santé Settat",
+        "acheteur": "INSTITUT SUPERIEUR DES SCIENCES DE LA SANTE SETTAT",
+        "date_limite": "08/09/2026 15:00",
+        "lieu": "MAROC, SETTAT",
         "categorie": "",
         "nature": "",
         "mot_cles": [
           "science"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/378630",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "69/ITAIH/2026",
-        "objet": "Achat d’écrans interactifs pour projection et enseignement didactique et pédagogique en salles de classes de l’ITA d’Izemmouren",
-        "acheteur": "INSTITUT TECHNIQUE AGRICOLE D'IZEMOUREN AL - HOCEIMA",
-        "date_limite": "07/09/2026 12:00",
-        "lieu": "AL HOCEIMA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "didactique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/378624",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/378670",
         "articles": "",
         "statut": ""
       }
@@ -45,12 +30,12 @@
   },
   "marches_publics": {
     "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
-    "commit_j": "d7e9c6487873a5b3e167b7d9ac0a1e166b09629c",
-    "date_j": "2026-09-06T02:36:43Z",
-    "commit_j_moins_1": "889cc5e830c2f2acee1f63501e1d0944582ed005",
-    "date_j_moins_1": "2026-09-05T02:35:50Z",
-    "commit_j_moins_2": "e9d6feafb127eedf047dc7e5cc619cff75346828",
-    "date_j_moins_2": "2026-09-04T02:36:34Z",
+    "commit_j": "0a07d603798110850c95fe221ba0d04066ae7e05",
+    "date_j": "2026-09-07T02:37:15Z",
+    "commit_j_moins_1": "d7e9c6487873a5b3e167b7d9ac0a1e166b09629c",
+    "date_j_moins_1": "2026-09-06T02:36:43Z",
+    "commit_j_moins_2": "889cc5e830c2f2acee1f63501e1d0944582ed005",
+    "date_j_moins_2": "2026-09-05T02:35:50Z",
     "nombre_nouvelles": 0,
     "annonces": []
   }
