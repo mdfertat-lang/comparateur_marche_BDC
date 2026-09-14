@@ -1,67 +1,26 @@
 {
-  "date_execution": "2026-09-13T03:34:26+00:00",
+  "date_execution": "2026-09-14T03:36:49+00:00",
   "comparaison": "J versus J-1 et J-2",
   "bdc": {
     "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
-    "commit_j": "5006170d1f92fdf536933df958687d062fbeacae",
-    "date_j": "2026-09-13T02:29:22Z",
-    "commit_j_moins_1": "6695d3ff611ec926d7a0b851142a39c6adc0dd9a",
-    "date_j_moins_1": "2026-09-12T02:29:37Z",
-    "commit_j_moins_2": "067e8252d33c4f457268485936b5b7d1f5cefc90",
-    "date_j_moins_2": "2026-09-11T02:29:04Z",
+    "commit_j": "04c13485d6bbc6b8e4bcdde5efc5bb9dd01196f6",
+    "date_j": "2026-09-14T02:29:18Z",
+    "commit_j_moins_1": "5006170d1f92fdf536933df958687d062fbeacae",
+    "date_j_moins_1": "2026-09-13T02:29:22Z",
+    "commit_j_moins_2": "6695d3ff611ec926d7a0b851142a39c6adc0dd9a",
+    "date_j_moins_2": "2026-09-12T02:29:37Z",
     "nombre_nouvelles": 0,
     "annonces": []
   },
   "marches_publics": {
     "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
-    "commit_j": "e434c7f3603ae76ae71a15e0572e491313ad9060",
-    "date_j": "2026-09-13T02:36:53Z",
-    "commit_j_moins_1": "91c5dcbcab2d5550c57dab964b26e0331b443930",
-    "date_j_moins_1": "2026-09-12T02:37:12Z",
-    "commit_j_moins_2": "cbc62897dbe6a4d79c7aa81b53871c4abb5880df",
-    "date_j_moins_2": "2026-09-11T02:36:43Z",
-    "nombre_nouvelles": 5,
-    "annonces": [
-      {
-        "reference": "20/2026/SAPP/GSTTTA",
-        "objet": "achat de fongible pour le laboratoire de pharmaco-toxicologie relevant de l'Hôpital Universitaire Général Mohammed VI - Tanger en 8 lots",
-        "acheteur": "Acheteur public : GROUPEMENT SANITAIRE TERRITORIAL TANGER - TETOUAN - AL HOCEIMA",
-        "lieu": "",
-        "date_limite": "24/09/2026 12:00",
-        "mot_cle": "laboratoire"
-      },
-      {
-        "reference": "26/2026/SAPP/GSTTTA",
-        "objet": "L’achat des tubes pour le besoin des laboratoires relevant de l'hôpital universitaire général Mohammed VI Tanger en 2 lots",
-        "acheteur": "Acheteur public : GROUPEMENT SANITAIRE TERRITORIAL TANGER - TETOUAN - AL HOCEIMA",
-        "lieu": "",
-        "date_limite": "24/09/2026 11:00",
-        "mot_cle": "laboratoire"
-      },
-      {
-        "reference": "14/2026",
-        "objet": "Acquisition, installation, paramétrage, mise en service et garantie des imprimantes et photocopieurs multifonctions au profit des Juridictions Financières.",
-        "acheteur": "Acheteur public : COUR DES COMPTES",
-        "lieu": "",
-        "date_limite": "23/10/2026 11:00",
-        "mot_cle": "four à moufle"
-      },
-      {
-        "reference": "16/DPCR/ANP/2026",
-        "objet": "ACQUISITION D’EQUIPEMENTS DE SECURITE AU PORT DE CASABLANCA",
-        "acheteur": "Acheteur public : AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT DE CASABLANCA ET REGION",
-        "lieu": "",
-        "date_limite": "06/10/2026 10:00",
-        "mot_cle": "PCR"
-      },
-      {
-        "reference": "18/2026/SAD/GSTTTA",
-        "objet": "L’achat De Matériel Et Mobilier De Bureau Pour l’Hôpital Universitaire Mère Et Enfant Mohammed VI Relevant Du Groupement Sanitaire Territorial Tanger – Tétouan – Al Hoceima En 08 lots ...",
-        "acheteur": "Acheteur public : GROUPEMENT SANITAIRE TERRITORIAL TANGER - TETOUAN - AL HOCEIMA",
-        "lieu": "",
-        "date_limite": "06/10/2026 11:00",
-        "mot_cle": "purification d'eau"
-      }
-    ]
+    "commit_j": "05f27d9624e7b5a821947f8bfb4e369a19bbde86",
+    "date_j": "2026-09-14T02:37:02Z",
+    "commit_j_moins_1": "e434c7f3603ae76ae71a15e0572e491313ad9060",
+    "date_j_moins_1": "2026-09-13T02:36:53Z",
+    "commit_j_moins_2": "91c5dcbcab2d5550c57dab964b26e0331b443930",
+    "date_j_moins_2": "2026-09-12T02:37:12Z",
+    "nombre_nouvelles": 0,
+    "annonces": []
   }
 }
