@@ -1,289 +1,58 @@
 {
-  "date_execution": "2026-09-19T03:33:53+00:00",
+  "date_execution": "2026-09-20T03:34:38+00:00",
   "comparaison": "J versus J-1 et J-2",
   "bdc": {
     "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
-    "commit_j": "3911feb8c1fb736fa7e1efdd2b20fccc3bb18857",
-    "date_j": "2026-09-19T02:28:26Z",
-    "commit_j_moins_1": "ffb4ba6da9059d2c68d9cce8d71aa1c923c1827a",
-    "date_j_moins_1": "2026-09-18T02:28:59Z",
-    "commit_j_moins_2": "0780d57558dd096dae0c54d65969ce8e24093e2a",
-    "date_j_moins_2": "2026-09-17T02:29:06Z",
-    "nombre_nouvelles": 18,
+    "commit_j": "24a7ce2811030a630db1f590e406f780b7210f54",
+    "date_j": "2026-09-20T02:28:45Z",
+    "commit_j_moins_1": "3911feb8c1fb736fa7e1efdd2b20fccc3bb18857",
+    "date_j_moins_1": "2026-09-19T02:28:26Z",
+    "commit_j_moins_2": "ffb4ba6da9059d2c68d9cce8d71aa1c923c1827a",
+    "date_j_moins_2": "2026-09-18T02:28:59Z",
+    "nombre_nouvelles": 3,
     "annonces": [
       {
-        "reference": "032/2026",
-        "objet": "Travaux de revêtement des sols en résine époxydique destinés aux espaces de recherche scientifique de la Cité d’Innovation et de Transfert de Technologie de l’Université Hassan II de Casablanca.",
-        "acheteur": "PRESIDENT DE L'UNIVERSITE HASSAN II DE CASABLANCA",
-        "date_limite": "20/09/2026 17:00",
-        "lieu": "CASABLANCA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383094",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "08/09/FNC/2026",
-        "objet": "Achat de matériels scientifiques",
+        "reference": "09/09/FNC/2026",
+        "objet": "Etude d’ingénierie tous corps d’état, assistance technique, suivi et réception des travaux d'aménagement d'un laboratoire et d'une salle de simulation et centre de calcul au profit de l'Ecole Supérieure de Technologie d'Agadir .",
         "acheteur": "ECOLE SUPERIEURE DE TECHNOLOGIE - AGADIR",
-        "date_limite": "22/09/2026 11:00",
+        "date_limite": "23/09/2026 11:00",
         "lieu": "AGADIR IDA OU TANANE",
         "categorie": "",
         "nature": "",
         "mot_cles": [
-          "scientifique"
+          "laboratoire"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382733",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383175",
         "articles": "",
         "statut": ""
       },
       {
-        "reference": "136/FSK/2026",
-        "objet": "Achat de Fournitures de bureau pour la Faculté des Sciences de Kénitra",
-        "acheteur": "FACULTE DES SCIENCES KENITRA",
-        "date_limite": "21/09/2026 10:00",
-        "lieu": "KENITRA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382884",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "21/09/FNC/2026",
-        "objet": "Fabrication, fourniture et pose d'une Estrade pour salle de bibliothèque au profit de la Faculté des Sciences d’El Jadida.",
-        "acheteur": "FACULTE DES SCIENCES - EL JADIDA",
-        "date_limite": "22/09/2026 10:00",
-        "lieu": "MAROC, EL JADIDA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382837",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "25/2026",
-        "objet": "Achat de réactif pour le laboratoire de CHP Rhamna pour Automate de biosytemes BA 400(biochimie) - Automate Mindrays Bs 240 PRO - Mindray BC 5380( NFS) - SYSMEX XN 550 - Groupage rhésus et MINIVIDAS",
-        "acheteur": "Centre Hospitalier Provincial Rehamna",
-        "date_limite": "20/09/2026 17:00",
-        "lieu": "REHAMNA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "laboratoire",
-          "verrerie",
-          "didactique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/373238",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "30/IS/2026",
-        "objet": "Achat de produit de nettoyage pour le compte de l’Institut Scientifique, UM5, Avenue Ibn Battouta, Rabat.",
-        "acheteur": "INSTITUT SCIENTIFIQUE - UNIVERSITE MOHAMMED V DE RABAT",
-        "date_limite": "20/09/2026 12:00",
-        "lieu": "RABAT",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382803",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "31/IS/2026",
-        "objet": "Achat de petits matériels pour le compte de l'Institut Scientifique",
-        "acheteur": "INSTITUT SCIENTIFIQUE - UNIVERSITE MOHAMMED V DE RABAT",
-        "date_limite": "20/09/2026 16:30",
-        "lieu": "RABAT",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383093",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "37/FSTE-2026",
-        "objet": "Achat de Matériel Scientifique au profit du Département de Biologie de la Faculté des Sciences et Techniques d’Errachidia",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES D'ERRACHIDIA",
-        "date_limite": "21/09/2026 12:00",
-        "lieu": "MAROC, ERRACHIDIA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique",
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382792",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "38/FSTE-2026",
-        "objet": "Achat de Fourniture Informatique au profit du Département de Biologie de la Faculté des Sciences et Techniques d’Errachidia",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES D'ERRACHIDIA",
-        "date_limite": "21/09/2026 12:00",
-        "lieu": "MAROC, ERRACHIDIA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382843",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "38PR/2026/FSO",
-        "objet": "Achat de matériel scientifique pour la Faculté des Sciences d’Oujda (Projet Maroc Souisse).",
-        "acheteur": "FACULTE DES SCIENCES OUJDA",
-        "date_limite": "23/09/2026 10:00",
+        "reference": "184-2026FMPO",
+        "objet": "Achat de petits outillages pour laboratoire de biologie-génétique.",
+        "acheteur": "FACULTE DE MEDECINE ET DE PHARMACIE OUJDA",
+        "date_limite": "24/09/2026 12:00",
         "lieu": "OUJDA-ANGAD",
         "categorie": "",
         "nature": "",
         "mot_cles": [
-          "scientifique",
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382757",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "51/2026/INRH/SIEGE/CASABLANCA",
-        "objet": "Réparation d’une Hotte chimique maque ESCO life sciences Model : Frontier Duo, réf : EFD-4A1.",
-        "acheteur": "INSTITUT NATIONAL DE RECHERCHE HALIEUTIQUE",
-        "date_limite": "23/09/2026 10:00",
-        "lieu": "CASABLANCA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382798",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "55/CF/2026",
-        "objet": "Réalisation d’un levé topographique de la Faculté des Sciences de l’Éducation de Rabat et réalisation d’un levé topographique et d’un relevé détaillé de l’état existant, intérieur et extérieur, de la résidence universitaire pour étudiantes, avec établissement des plans à l’échelle en formats numériques DWG et PDF",
-        "acheteur": "FACULTE DES SCIENCES DE L'EDUCATION",
-        "date_limite": "24/09/2026 10:00",
-        "lieu": "RABAT",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382982",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "56/CF/2026",
-        "objet": "Étude préalable pour la mise en place d’un marché-cadre d’entretien du réseau d’irrigation de la Faculté des Sciences de l’Éducation de Rabat",
-        "acheteur": "FACULTE DES SCIENCES DE L'EDUCATION",
-        "date_limite": "24/09/2026 11:00",
-        "lieu": "RABAT",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382986",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "56/FSR/2026",
-        "objet": "Etude et suivi des travaux d’aménagement et de réhabilitation des laboratoires à la Faculté des Sciences 4 Avenue Ibn Battouta, Rabat.",
-        "acheteur": "FACULTE DES SCIENCES- RABAT",
-        "date_limite": "22/09/2026 12:30",
-        "lieu": "RABAT",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science",
           "laboratoire"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383015",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383178",
         "articles": "",
         "statut": ""
       },
       {
-        "reference": "71/2026",
-        "objet": "Achat de gasoil pour le groupe électrogène du Laboratoire Régional d’Analyses et de Recherches de Casablanca relevant de la Direction Régionale de l’ONSSA région Casablanca Settat",
-        "acheteur": "OFFICE NATIONAL DE SECURITE SANITAIRE DES PRODUITS ALIMENTAIRES - DIRECTION REGIONALE DE LA REGION CASABLANCA - SETTAT",
+        "reference": "25/2026/FLDM",
+        "objet": "Achat de mobilier de bureau au profit de la Faculté des Lettres et des Sciences Humaines Dhar El Mahraz de Fès. N.B. : Les concurrents sont tenus d’envoyer avant la date limite de réception des devis, à l’adresse e-mail suivante : elamine.bakrim@usmba.ac.ma : - Une caution provisoire d'un montant de 5 000,00 DHS (Cinq Mille Dirhams), portant la signature électronique du concurrent, - Deux attestations de référence dont l'objet est en rapport avec celui de présent avis d'achat (seuls les dossiers des concurrents exerçants une activité en relation avec l'objet de l'avis d'achat seront examinés). Le concurrent ayant l'offre la moins disante sera invité à déposer les échantillons ou la documentation technique avec la liste de colisage des articles objet de l'avis d'achat au service financier pour jugement technique avant l'attribution du BC.",
+        "acheteur": "FACULTE DES LETTRES ET DES SCIENCES HUMAINES DHAR EL MEHRAZ FES",
         "date_limite": "24/09/2026 12:00",
-        "lieu": "NOUACEUR",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "laboratoire",
-          "balance"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382725",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "84/2026",
-        "objet": "Conditionnent, collecte, transport et traitement des Déchets de laboratoire de l’institut Supérieur des Professions Infirmières et Techniques de Santé d’Agadir pour la période allant du visa du bon de commande jusqu’à le 31/10/2026.",
-        "acheteur": "DIRECTEUR DE L'INSTITUT SUPERIEURE DES PROFISSIONS INFERMIERES ET TECHNIQUES DE SANTE AGADIR",
-        "date_limite": "21/09/2026 09:00",
-        "lieu": "AGADIR IDA OU TANANE",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "laboratoire"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383028",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "BC-105-PR-2026",
-        "objet": "Fourniture, installation et mise en service du système d’arrosage du jardin de l’Institut des Sciences du Sport.",
-        "acheteur": "PRESIDENCE DE L'UNIVERSITE HASSAN I",
-        "date_limite": "22/09/2026 12:00",
-        "lieu": "SETTAT",
+        "lieu": "FES",
         "categorie": "",
         "nature": "",
         "mot_cles": [
           "science"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383131",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "FSBM_BC_60/26_BIS",
-        "objet": "Achat de produits et de fournitures de laboratoire destinés au département de géologie de la FSBM",
-        "acheteur": "FACULTE DES SCIENCES BEN M'SIK DE CASABLANCA",
-        "date_limite": "22/09/2026 12:00",
-        "lieu": "CASABLANCA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "laboratoire"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/382916",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383189",
         "articles": "",
         "statut": ""
       }
@@ -291,60 +60,28 @@
   },
   "marches_publics": {
     "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
-    "commit_j": "bb6891822d4ffc24138ce6cb92a8caaaef28801d",
-    "date_j": "2026-09-19T02:35:48Z",
-    "commit_j_moins_1": "7dfbb04f082255d53981a0bf320553f8136848fd",
-    "date_j_moins_1": "2026-09-18T02:36:56Z",
-    "commit_j_moins_2": "8b15d92cb7590a07ce99aa2927d064de7e9002e2",
-    "date_j_moins_2": "2026-09-17T02:37:03Z",
-    "nombre_nouvelles": 6,
+    "commit_j": "d3ea7073e3948630ad43f4ec9ca62f95cf1fcfb4",
+    "date_j": "2026-09-20T02:36:47Z",
+    "commit_j_moins_1": "bb6891822d4ffc24138ce6cb92a8caaaef28801d",
+    "date_j_moins_1": "2026-09-19T02:35:48Z",
+    "commit_j_moins_2": "7dfbb04f082255d53981a0bf320553f8136848fd",
+    "date_j_moins_2": "2026-09-18T02:36:56Z",
+    "nombre_nouvelles": 2,
     "annonces": [
       {
-        "reference": "09/MB/FSM/26",
-        "objet": "ACHAT DE MOBILIER DE BUREAU DESTINE A LA FACULTE DES SCIENCES DE MEKNES",
-        "acheteur": "Acheteur public : FACULTE DES SCIENCES MEKNES",
+        "reference": "14/AOO/DPAR/ANP/2026",
+        "objet": "FOURNITURE ET MISE EN SERVICE DES EQUIPEMENTS ET MATERIELS DE SECURITE AU PORT D’AGADIR",
+        "acheteur": "Acheteur public : AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT D'AGADIR ET REGION",
         "lieu": "",
-        "date_limite": "01/10/2026 10:00",
-        "mot_cle": "science"
-      },
-      {
-        "reference": "03/MOE/UMI/26",
-        "objet": "Fourniture et mise en place de mobilier d’enseignement à la Faculté des Lettres et des Sciences Humaines de Meknès",
-        "acheteur": "Acheteur public : PRESIDENCE DE L'UNIVERSITE MOULAY ISMAIL MEKNES",
-        "lieu": "",
-        "date_limite": "29/09/2026 11:00",
-        "mot_cle": "science"
-      },
-      {
-        "reference": "AO15/2026CHPN",
-        "objet": "Achat des produits biologiques et chimiques relatif au laboratoire pour l’hôpital de proximité Mohamed VI al Aruit et l’hôpital de proximité de Zaio relevant du centre hospitalier provincial nador en deux (02) lots ...",
-        "acheteur": "Acheteur public : CENTRE HOSPITALIER PROVINCIAL DE NADOR",
-        "lieu": "",
-        "date_limite": "30/09/2026 11:00",
-        "mot_cle": "laboratoire"
-      },
-      {
-        "reference": "05/2026/DRMNE",
-        "objet": "Fourniture, installation et mise en service d’un système d’automatisation de l’observation météorologique de la piste d'envol 06/24 de l’aéroport d'Oujda-Angads (Préfecture d’Oujda-Angad) ...",
-        "acheteur": "Acheteur public : DIRECTION REGIONALE DE LA METEOROLOGIE DU NORD EST FES",
-        "lieu": "",
-        "date_limite": "03/11/2026 10:00",
+        "date_limite": "15/10/2026 10:00",
         "mot_cle": "four de laboratoire"
       },
       {
-        "reference": "PM4130063/2026/DXM",
-        "objet": "Fourniture des tubes à ailettes haute pression pour les chaudières au charbon de la Direction Exploitation Mohammedia",
-        "acheteur": "Acheteur public : OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
+        "reference": "16/AOO/DPAR/ANP/2026",
+        "objet": "FOURNITURE ET MISE EN SERVICE DES EQUIPEMENTS DE LUTTE CONTRE LA POLLUTION MARINE AU PORT D’AGADIR",
+        "acheteur": "Acheteur public : AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT D'AGADIR ET REGION",
         "lieu": "",
-        "date_limite": "29/10/2026 09:00",
-        "mot_cle": "four de laboratoire"
-      },
-      {
-        "reference": "100/2026/CM",
-        "objet": "Achat de fournitures pour matériel informatique installé dans les différents services de la commune de Marrakech",
-        "acheteur": "Acheteur public : Commune urbaine de MARRAKECH",
-        "lieu": "",
-        "date_limite": "15/10/2026 11:30",
+        "date_limite": "15/10/2026 10:00",
         "mot_cle": "four de laboratoire"
       }
     ]
