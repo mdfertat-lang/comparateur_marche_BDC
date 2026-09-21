@@ -1,88 +1,42 @@
 {
-  "date_execution": "2026-09-20T03:34:38+00:00",
+  "date_execution": "2026-09-21T03:36:20+00:00",
   "comparaison": "J versus J-1 et J-2",
   "bdc": {
     "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
-    "commit_j": "24a7ce2811030a630db1f590e406f780b7210f54",
-    "date_j": "2026-09-20T02:28:45Z",
-    "commit_j_moins_1": "3911feb8c1fb736fa7e1efdd2b20fccc3bb18857",
-    "date_j_moins_1": "2026-09-19T02:28:26Z",
-    "commit_j_moins_2": "ffb4ba6da9059d2c68d9cce8d71aa1c923c1827a",
-    "date_j_moins_2": "2026-09-18T02:28:59Z",
-    "nombre_nouvelles": 3,
-    "annonces": [
-      {
-        "reference": "09/09/FNC/2026",
-        "objet": "Etude d’ingénierie tous corps d’état, assistance technique, suivi et réception des travaux d'aménagement d'un laboratoire et d'une salle de simulation et centre de calcul au profit de l'Ecole Supérieure de Technologie d'Agadir .",
-        "acheteur": "ECOLE SUPERIEURE DE TECHNOLOGIE - AGADIR",
-        "date_limite": "23/09/2026 11:00",
-        "lieu": "AGADIR IDA OU TANANE",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "laboratoire"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383175",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "184-2026FMPO",
-        "objet": "Achat de petits outillages pour laboratoire de biologie-génétique.",
-        "acheteur": "FACULTE DE MEDECINE ET DE PHARMACIE OUJDA",
-        "date_limite": "24/09/2026 12:00",
-        "lieu": "OUJDA-ANGAD",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "laboratoire"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383178",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "25/2026/FLDM",
-        "objet": "Achat de mobilier de bureau au profit de la Faculté des Lettres et des Sciences Humaines Dhar El Mahraz de Fès. N.B. : Les concurrents sont tenus d’envoyer avant la date limite de réception des devis, à l’adresse e-mail suivante : elamine.bakrim@usmba.ac.ma : - Une caution provisoire d'un montant de 5 000,00 DHS (Cinq Mille Dirhams), portant la signature électronique du concurrent, - Deux attestations de référence dont l'objet est en rapport avec celui de présent avis d'achat (seuls les dossiers des concurrents exerçants une activité en relation avec l'objet de l'avis d'achat seront examinés). Le concurrent ayant l'offre la moins disante sera invité à déposer les échantillons ou la documentation technique avec la liste de colisage des articles objet de l'avis d'achat au service financier pour jugement technique avant l'attribution du BC.",
-        "acheteur": "FACULTE DES LETTRES ET DES SCIENCES HUMAINES DHAR EL MEHRAZ FES",
-        "date_limite": "24/09/2026 12:00",
-        "lieu": "FES",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383189",
-        "articles": "",
-        "statut": ""
-      }
-    ]
+    "commit_j": "7b64b89cc058851a92dfe47fefed91407565b0e3",
+    "date_j": "2026-09-21T02:29:12Z",
+    "commit_j_moins_1": "24a7ce2811030a630db1f590e406f780b7210f54",
+    "date_j_moins_1": "2026-09-20T02:28:45Z",
+    "commit_j_moins_2": "3911feb8c1fb736fa7e1efdd2b20fccc3bb18857",
+    "date_j_moins_2": "2026-09-19T02:28:26Z",
+    "nombre_nouvelles": 0,
+    "annonces": []
   },
   "marches_publics": {
     "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
-    "commit_j": "d3ea7073e3948630ad43f4ec9ca62f95cf1fcfb4",
-    "date_j": "2026-09-20T02:36:47Z",
-    "commit_j_moins_1": "bb6891822d4ffc24138ce6cb92a8caaaef28801d",
-    "date_j_moins_1": "2026-09-19T02:35:48Z",
-    "commit_j_moins_2": "7dfbb04f082255d53981a0bf320553f8136848fd",
-    "date_j_moins_2": "2026-09-18T02:36:56Z",
+    "commit_j": "1fc353f040afe05036baea8203009900f9c13869",
+    "date_j": "2026-09-21T02:36:39Z",
+    "commit_j_moins_1": "d3ea7073e3948630ad43f4ec9ca62f95cf1fcfb4",
+    "date_j_moins_1": "2026-09-20T02:36:47Z",
+    "commit_j_moins_2": "bb6891822d4ffc24138ce6cb92a8caaaef28801d",
+    "date_j_moins_2": "2026-09-19T02:35:48Z",
     "nombre_nouvelles": 2,
     "annonces": [
       {
-        "reference": "14/AOO/DPAR/ANP/2026",
-        "objet": "FOURNITURE ET MISE EN SERVICE DES EQUIPEMENTS ET MATERIELS DE SECURITE AU PORT D’AGADIR",
-        "acheteur": "Acheteur public : AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT D'AGADIR ET REGION",
+        "reference": "09/ONSSA/DRO/2026",
+        "objet": "Achat de produits chimiques, biologiques et de laboratoire réparti en deux lots : Lot n°1 : produits pour les analyses de Biologie moléculaire Lot n°2 : produits pour les analyses de sérologie ...",
+        "acheteur": "Acheteur public : OFFICE NATIONAL DE SECURITE SANITAIRE DES PRODUITS ALIMENTAIRES - DIRECTION REGIONALE DE LA REGION DE L'ORIENTAL",
         "lieu": "",
-        "date_limite": "15/10/2026 10:00",
-        "mot_cle": "four de laboratoire"
+        "date_limite": "13/10/2026 09:30",
+        "mot_cle": "laboratoire"
       },
       {
-        "reference": "16/AOO/DPAR/ANP/2026",
-        "objet": "FOURNITURE ET MISE EN SERVICE DES EQUIPEMENTS DE LUTTE CONTRE LA POLLUTION MARINE AU PORT D’AGADIR",
-        "acheteur": "Acheteur public : AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT D'AGADIR ET REGION",
+        "reference": "05/2027/DRASM/DPSA",
+        "objet": "Achat du matériel informatique et logiciels pour le compte de la direction régionale de l’agriculture du Souss Massa en lot unique",
+        "acheteur": "Acheteur public : DIRECTEUR REGIONAL D'AGRICULTURE DE LA REGION SOUS MASSA",
         "lieu": "",
-        "date_limite": "15/10/2026 10:00",
-        "mot_cle": "four de laboratoire"
+        "date_limite": "03/11/2026 11:00",
+        "mot_cle": "four à moufle"
       }
     ]
   }
