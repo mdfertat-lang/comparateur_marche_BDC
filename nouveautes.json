@@ -1,315 +1,299 @@
 {
-  "date_execution": "2026-09-24T03:35:17+00:00",
+  "date_execution": "2026-09-25T03:35:01+00:00",
   "comparaison": "J versus J-1 et J-2",
   "bdc": {
     "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
-    "commit_j": "4817a08e111db6972832a767bc24be85a7edd1fd",
-    "date_j": "2026-09-24T02:27:50Z",
-    "commit_j_moins_1": "f1ebe833100584c5fdee78daf5b387daad9f171a",
-    "date_j_moins_1": "2026-09-23T02:26:29Z",
-    "commit_j_moins_2": "efe907f6e21720457ab8ca3eb4111ca0d3ecce6d",
-    "date_j_moins_2": "2026-09-22T02:25:58Z",
-    "nombre_nouvelles": 20,
+    "commit_j": "fd3a3527356b6d2372c3ef377023dd5699ec2812",
+    "date_j": "2026-09-25T02:27:38Z",
+    "commit_j_moins_1": "4817a08e111db6972832a767bc24be85a7edd1fd",
+    "date_j_moins_1": "2026-09-24T02:27:50Z",
+    "commit_j_moins_2": "f1ebe833100584c5fdee78daf5b387daad9f171a",
+    "date_j_moins_2": "2026-09-23T02:26:29Z",
+    "nombre_nouvelles": 19,
     "annonces": [
       {
-        "reference": "06/09/PUCD/2026",
-        "objet": "Études techniques, Voiries et Réseaux Divers et paysagères et Suivi des travaux d’aménagement du nouveau centre d’incubation, et des travaux d’aménagement à l’Ecole Nationale des Sciences Appliquées « ENSA» d’El Jadida , et le Redesign du campus Mazagan (Houazia) relevant de l’Université Chouaib Doukkali d’El Jadida.",
+        "reference": "07/09/PUCD/2026",
+        "objet": "Etudes techniques des travaux de construction du code 212 à la Faculté des Lettres et des Sciences Humaines (FLSH) d’El Jadida.",
         "acheteur": "PRESIDENT DE L'UNIVERSITE CHOUAIB DOUKKALI",
-        "date_limite": "29/09/2026 12:00",
+        "date_limite": "29/09/2026 15:30",
         "lieu": "EL JADIDA",
         "categorie": "",
         "nature": "",
         "mot_cles": [
           "science"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384663",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384770",
         "articles": "",
         "statut": ""
       },
       {
-        "reference": "1/9/INV/2026",
-        "objet": "Achat matériel informatique laboratoire LARGE",
-        "acheteur": "ECOLE NATIONALE DE COMMERCE ET DE GESTION AGADIR",
-        "date_limite": "25/09/2026 18:00",
-        "lieu": "AGADIR IDA OU TANANE",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "laboratoire"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384652",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "137/FSK/2026",
-        "objet": "Achat de Mobilier de bureau pour la Faculté des Sciences de Kénitra",
-        "acheteur": "FACULTE DES SCIENCES KENITRA",
-        "date_limite": "25/09/2026 12:30",
-        "lieu": "KENITRA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384463",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "18/2026",
-        "objet": "achat de matériel médicotechniques destinés au laboratoire de sante publique relevant de la délégation de la santé et de la protection sociale à El kelaa des sraghna.",
-        "acheteur": "DELEGUE DU MINISTERE DE LA SANTE A LA PROVINCE KELAA ES-SRAGHNA",
-        "date_limite": "28/09/2026 09:00",
-        "lieu": "EL KELAA DES SRAGHNA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "laboratoire",
-          "verrerie"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384441",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "188FSTM/2026",
-        "objet": "Achat de Matériel scientifique",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES DE MOHAMMEDIA",
-        "date_limite": "29/09/2026 09:00",
-        "lieu": "MOHAMMADIA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/380401",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "205FSTM/2026",
-        "objet": "Achat de Matériel scientifique",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES DE MOHAMMEDIA",
-        "date_limite": "29/09/2026 09:00",
-        "lieu": "MOHAMMADIA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384548",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "22/09/FNC/2026",
-        "objet": "Fabrication, fourniture et pose d'une Estrade pour salle de bibliothèque au profit de la Faculté des Sciences d’El Jadida.",
-        "acheteur": "FACULTE DES SCIENCES - EL JADIDA",
-        "date_limite": "28/09/2026 09:00",
-        "lieu": "MAROC, EL JADIDA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384215",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "22/CRA-ADS/2026",
-        "objet": "Achat de fournitures Informatique pour le Programme GISSR « Incubateur Social référentiel",
-        "acheteur": "COORDINATION REGIONALE DE L'AGENCE DE DEVELOPPEMENT SOCIAL DE LA REGION SOUSS MASSA",
+        "reference": "09/FLSHM/2026",
+        "objet": "Achat de Drapeaux au profit de la faculté des lettres et des sciences humaines de Marrakech",
+        "acheteur": "Facultés des lettres et des sciences humaines Marrakech",
         "date_limite": "28/09/2026 10:00",
-        "lieu": "AGADIR IDA OU TANANE",
+        "lieu": "MARRAKECH",
         "categorie": "",
         "nature": "",
         "mot_cles": [
-          "incubateur"
+          "science"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384063",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/385009",
         "articles": "",
         "statut": ""
       },
       {
-        "reference": "27/ONSSA/DRFM/2026",
-        "objet": "Achat de petit outillage et quincaillerie destiné au laboratoire régional des analyses et de recherches de Meknès",
-        "acheteur": "OFFICE NATIONAL DE SECURITE SANITAIRE DES PRODUITS ALIMENTAIRES - DIRECTION REGIONALE DE LA REGION FES-MEKNES",
-        "date_limite": "25/09/2026 14:30",
-        "lieu": "MEKNES",
+        "reference": "12/BI/2026/MRK",
+        "objet": "Achat sur bons de commande d’outillage et de consommable de laboratoire du CRRA de Marrakech.",
+        "acheteur": "INSTITUT NATIONAL DE LA RECHERCHE AGRONOMIQUE/ CENTRE REGIONAL DE LA RECHERCHE AGRONOMIQUE DE MARRAKECH",
+        "date_limite": "30/09/2026 10:00",
+        "lieu": "MARRAKECH",
         "categorie": "",
         "nature": "",
         "mot_cles": [
           "laboratoire"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384185",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384624",
         "articles": "",
         "statut": ""
       },
       {
-        "reference": "28/ONSSA/DRFM/2026",
-        "objet": "Achat de produit d'hygiène et de désinfection pour le laboratoire régional des analyses et de recherches de Meknès",
-        "acheteur": "OFFICE NATIONAL DE SECURITE SANITAIRE DES PRODUITS ALIMENTAIRES - DIRECTION REGIONALE DE LA REGION FES-MEKNES",
-        "date_limite": "25/09/2026 14:45",
-        "lieu": "MEKNES",
+        "reference": "143/SA/2026",
+        "objet": "Fourniture et pose de plaques de signalisation intérieure Laboratoire de Mycobactérie",
+        "acheteur": "INSTITUT PASTEUR DU MAROC",
+        "date_limite": "30/09/2026 14:00",
+        "lieu": "CASABLANCA",
         "categorie": "",
         "nature": "",
         "mot_cles": [
           "laboratoire"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384374",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384819",
         "articles": "",
         "statut": ""
       },
       {
-        "reference": "29/ONSSA/DRFM/2026",
-        "objet": "Achat de Fourniture techniques de laboratoire destinés au Laboratoire Régional d'Analyses et de Recherches de Meknès",
-        "acheteur": "OFFICE NATIONAL DE SECURITE SANITAIRE DES PRODUITS ALIMENTAIRES - DIRECTION REGIONALE DE LA REGION FES-MEKNES",
-        "date_limite": "25/09/2026 15:00",
-        "lieu": "MEKNES",
+        "reference": "25/CROLSH/2026",
+        "objet": "Achat de fournitures didactiques et pédagogiques relatif au projet \"TASDID TABLIGH\" des Conseils des Ouléma de la Région Laâyoune-Sakia El Hamra.",
+        "acheteur": "CONSEIL REGIONAL DES OULEMAS DE LA REGION LAAYOUNE SAGUIA ELHAMRA",
+        "date_limite": "26/09/2026 16:20",
+        "lieu": "LAAYOUNE",
         "categorie": "",
         "nature": "",
         "mot_cles": [
-          "laboratoire"
+          "didactique"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384469",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384995",
         "articles": "",
         "statut": ""
       },
       {
-        "reference": "44/FSTE-2026",
-        "objet": "Achat de Matériel d'enseignement au profit du Département de l'informatique de la Faculté des Sciences et Techniques d’Errachidia",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES D'ERRACHIDIA",
-        "date_limite": "25/09/2026 12:00",
-        "lieu": "MAROC, ERRACHIDIA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384039",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "45/FSTE-2026",
-        "objet": "Achat de Fourniture de Bureau au profit du Département d’Informatique de la Faculté des Sciences et Techniques d’Errachidia.",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES D'ERRACHIDIA",
-        "date_limite": "25/09/2026 12:00",
-        "lieu": "MAROC, ERRACHIDIA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384356",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "46/FSTE-2026",
-        "objet": "Achat de Matériel Informatique au profit du Département d’Informatique de la Faculté des Sciences et Techniques d’Errachidia.",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES D'ERRACHIDIA",
-        "date_limite": "25/09/2026 12:00",
-        "lieu": "MAROC, ERRACHIDIA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384419",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "47/FSTE-2026",
-        "objet": "Achat de matières premières au profit du Département de Chimie de la Faculté des Sciences et Techniques d’Errachidia",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES D'ERRACHIDIA",
-        "date_limite": "25/09/2026 14:00",
-        "lieu": "MAROC, ERRACHIDIA",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384510",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "51-CRORCS-2026",
-        "objet": "Location de matériel (sonorisation) à l'occasion d'organisation des manifestations culturelles et scientifiques par les conseils locaux des oulema de de la région Casablanca -Settat.",
-        "acheteur": "CONSEIL REGIONAL DES OULEMAS DE LA REGION CASBLANCA SETTAT",
-        "date_limite": "25/09/2026 12:00",
-        "lieu": "CASABLANCA, MOHAMMADIA, EL JADIDA, NOUACEUR, MEDIOUNA, BENSLIMANE, BERRECHID, SETTAT, SIDI BENNOUR",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384386",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "54/2026",
-        "objet": "Achat de fourniture de bureau au profit de la Faculté des Sciences Dhar el Mahraz Fès.",
-        "acheteur": "FACULTE DES SCIENCES DHAR EL MEHRAZ - FES",
-        "date_limite": "25/09/2026 13:30",
-        "lieu": "FES",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384496",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "58/ENSIAS/2026",
-        "objet": "Prestation de restauration relative aux manifestations scientifiques organisés à l’ENSIAS durant le mois de septembre 2026.",
-        "acheteur": "ECOLE NATIONALE SUPERIEUR D'INFORMATIQUE ET D'ANALYSE DES SYSTEMES",
-        "date_limite": "25/09/2026 16:00",
+        "reference": "32/IS/2026",
+        "objet": "Achat de matériel de bureau pour le compte de l'Institut Scientifique de Rabat",
+        "acheteur": "INSTITUT SCIENTIFIQUE - UNIVERSITE MOHAMMED V DE RABAT",
+        "date_limite": "26/09/2026 18:00",
         "lieu": "RABAT",
         "categorie": "",
         "nature": "",
         "mot_cles": [
           "scientifique"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384385",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/385018",
         "articles": "",
         "statut": ""
       },
       {
-        "reference": "86/2026",
-        "objet": "Impression divers articles à l’occasion d’organisation d’une rencontre scientifique dans le cadre de la mise en œuvre du plan Tasdid Tabligh : حفل تسليم جائزة الوطنية والتنويهية للخطبة المنبرية الدورة السابعة",
-        "acheteur": "CONSEIL REGIONAL DES OULEMAS DE LA REGION DE RABAT SALE KENITRA",
-        "date_limite": "25/09/2026 17:00",
-        "lieu": "SALE",
+        "reference": "33-2026",
+        "objet": "Achat de matériel et accessoires technique pour le laboratoire de santé publique santé environnement à la province de Safi.",
+        "acheteur": "DELEGUE DU MINISTERE DE LA SANTE A LA PROVINCE SAFI",
+        "date_limite": "28/09/2026 10:00",
+        "lieu": "SAFI",
         "categorie": "",
         "nature": "",
         "mot_cles": [
-          "scientifique",
-          "autoclave"
+          "laboratoire"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384639",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384715",
         "articles": "",
         "statut": ""
       },
       {
-        "reference": "99/26",
-        "objet": "FOURNITURE DE SILICONE SPRAY D'AUTOCLAVE",
-        "acheteur": "Centre Hospitalier Provincial de Jerada",
+        "reference": "34-2026",
+        "objet": "Achat des réactifs pour le laboratoire de santé publique santé environnement à la province de Safi.",
+        "acheteur": "DELEGUE DU MINISTERE DE LA SANTE A LA PROVINCE SAFI",
         "date_limite": "28/09/2026 11:00",
-        "lieu": "JERADA",
+        "lieu": "SAFI",
         "categorie": "",
         "nature": "",
         "mot_cles": [
+          "laboratoire"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384960",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "39/ONSSA/DRRSK/2026",
+        "objet": "l’achat de matériel technique, de laboratoire, de protection et de sécurité",
+        "acheteur": "OFFICE NATIONAL DE SECURITE SANITAIRE DES PRODUITS ALIMENTAIRES - DIRECTION REGIONALE DE LA REGION RABAT - SALE - KENITRA",
+        "date_limite": "29/09/2026 12:00",
+        "lieu": "SKHIRATE-TEMARA",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "laboratoire"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384880",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "39PR/2026/FSO",
+        "objet": "Achat de matériel informatique pour la Faculté des Sciences d’Oujda (Projet Oli4Food)",
+        "acheteur": "FACULTE DES SCIENCES OUJDA",
+        "date_limite": "30/09/2026 10:00",
+        "lieu": "OUJDA-ANGAD",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "science"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384391",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "40PR/2026/FSO",
+        "objet": "Achat de matière première pour la Faculté des Sciences d’Oujda (Projet Oli4Food)",
+        "acheteur": "FACULTE DES SCIENCES OUJDA",
+        "date_limite": "30/09/2026 10:00",
+        "lieu": "OUJDA-ANGAD",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "science"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384702",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "44/2026",
+        "objet": "Achat de matériel informatique pour les laboratoires de recherche",
+        "acheteur": "ECOLE NORMALE SUPERIEURE MARRAKECH",
+        "date_limite": "28/09/2026 09:00",
+        "lieu": "MARRAKECH",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "laboratoire",
           "autoclave"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384349",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384950",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "48/FSTE-2026",
+        "objet": "Achat de Petit outillage au profit du Département de Chimie de la Faculté des Sciences et Techniques d’Errachidia",
+        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES D'ERRACHIDIA",
+        "date_limite": "28/09/2026 12:00",
+        "lieu": "MAROC, ERRACHIDIA",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "science"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384743",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "65/FSSM/2026",
+        "objet": "Achat de petit outillage et petit équipement au profit de la faculté des sciences semlalia Marrakech.",
+        "acheteur": "FACULTE DES SCIENCES SEMLALIA",
+        "date_limite": "28/09/2026 10:00",
+        "lieu": "MARRAKECH",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "science"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/383575",
+        "articles": "",
+        "statut": "Annulé"
+      },
+      {
+        "reference": "67/FSSM/2026",
+        "objet": "Achat de Matériel audio visuel pour la Faculté des Sciences Semlalia de Marrakech",
+        "acheteur": "FACULTE DES SCIENCES SEMLALIA",
+        "date_limite": "26/09/2026 16:00",
+        "lieu": "MARRAKECH",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "science"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384893",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "68/FSSM/2026",
+        "objet": "Achat de petit outillage et petit équipement au profit de la faculté des sciences semlalia Marrakech.",
+        "acheteur": "FACULTE DES SCIENCES SEMLALIA",
+        "date_limite": "28/09/2026 10:00",
+        "lieu": "MARRAKECH",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "science"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384939",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "93/2026/FSO",
+        "objet": "Fourniture et pose d'une verrière rectangulaire en aluminium et verre armé pour la Faculté des Sciences d'Oujda",
+        "acheteur": "FACULTE DES SCIENCES OUJDA",
+        "date_limite": "30/09/2026 10:00",
+        "lieu": "OUJDA-ANGAD",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "science"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384971",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "94/2026/FSO",
+        "objet": "Elaboration des études techniques et suivi des travaux d'aménagement du bloc administratif principal de la Faculté des Sciences d’Oujda",
+        "acheteur": "FACULTE DES SCIENCES OUJDA",
+        "date_limite": "30/09/2026 11:00",
+        "lieu": "OUJDA-ANGAD",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "science"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384978",
+        "articles": "",
+        "statut": ""
+      },
+      {
+        "reference": "OFPT/DRFM/CFC/N08/2026",
+        "objet": "Prestations d’expertise technique, de diagnostic structurel et d'essais de laboratoire sur les éléments en béton armé et maçonnerie au profit du Complexe de Formation de Confection Fès relevant de la Direction Régionale Fès-Meknès (OFPPT).",
+        "acheteur": "OFPPT / COMPLEXE DE FORMATION PROFESSIONNELLE DE CONFECTION FES",
+        "date_limite": "28/09/2026 11:00",
+        "lieu": "FES",
+        "categorie": "",
+        "nature": "",
+        "mot_cles": [
+          "laboratoire"
+        ],
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/384811",
         "articles": "",
         "statut": ""
       }
@@ -317,93 +301,141 @@
   },
   "marches_publics": {
     "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
-    "commit_j": "34a38097e7cf5c7d44290553d93ee77700f12856",
-    "date_j": "2026-09-24T02:35:53Z",
-    "commit_j_moins_1": "de4d5562400e315e26aecae648b90d2ac3af77a5",
-    "date_j_moins_1": "2026-09-23T02:36:30Z",
-    "commit_j_moins_2": "c413b171346183cad3157e3e93ad9ee245213c8a",
-    "date_j_moins_2": "2026-09-22T02:33:18Z",
-    "nombre_nouvelles": 10,
+    "commit_j": "1ac21348ed11eda4b24f2fbe639027b371ac97d3",
+    "date_j": "2026-09-25T02:35:27Z",
+    "commit_j_moins_1": "34a38097e7cf5c7d44290553d93ee77700f12856",
+    "date_j_moins_1": "2026-09-24T02:35:53Z",
+    "commit_j_moins_2": "de4d5562400e315e26aecae648b90d2ac3af77a5",
+    "date_j_moins_2": "2026-09-23T02:36:30Z",
+    "nombre_nouvelles": 16,
     "annonces": [
       {
-        "reference": "10MATSCI/2026/FSA",
-        "objet": "ACHAT DE MATERIEL SCIENTIFIQUE POUR LE COMPTE DE LA FACULTE DES SCIENCES AGADIR (EN VINGT ET UN LOTS) LOT N°1 : MATERIEL SCIENTIFIQUE TYPE1 LOT N°2 : MATERIEL SCIENTIFIQUE TYPE2 LOT N°3 : MATERIEL SCIENTIFIQUE TYPE3 LOT N°4 ...",
-        "acheteur": "Acheteur public : FACULTE DES SCIENCES AGADIR",
-        "lieu": "",
-        "date_limite": "16/10/2026 09:00",
-        "mot_cle": "scientifique"
-      },
-      {
-        "reference": "11MATINFO/2026/FSA",
-        "objet": "ACHAT DE MATERIEL INFORMATIQUE POUR LE COMPTE DE LA FACULTE DES SCIENCES AGADIR (EN NEUF LOTS) LOT N°1 : MATERIEL INFORMATIQUE TYPE 1 LOT N°2 : MATERIEL INFORMATIQUE TYPE 2 LOT N°3 : MATERIEL INFORMATIQUE TYPE 3 LOT N°4 : ...",
-        "acheteur": "Acheteur public : FACULTE DES SCIENCES AGADIR",
-        "lieu": "",
-        "date_limite": "16/10/2026 10:00",
-        "mot_cle": "science"
-      },
-      {
-        "reference": "114/FSTM/2026",
-        "objet": "Achat de matériel informatique et logiciels pour la Faculté des Sciences et Techniques de Marrakech (10 Lots)",
-        "acheteur": "Acheteur public : FACULTE DES SCIENCES ET TECHNIQUES MARRAKECH",
-        "lieu": "",
-        "date_limite": "15/10/2026 11:00",
-        "mot_cle": "science"
-      },
-      {
-        "reference": "07/DRAI/GON/BH/2026",
-        "objet": "LA FOURNITURE, L’INSTALLATION ET LA MISE EN SERVICE DES CHAUFFE EAUX SOLAIRES POUR PLUSIEURS MOSQUEES DANS LA REGION DE GUELMIM OUED NOUN (DEUXIEME TRANCHE), EN LOT UNIQUE.",
-        "acheteur": "Acheteur public : DELEGUE REGIONAL DES AFFAIRES ISLAMIQUES DE LA REGION GUELMIM OUED NOUN",
-        "lieu": "",
-        "date_limite": "20/10/2026 14:00",
-        "mot_cle": "four de laboratoire"
-      },
-      {
-        "reference": "06/DRAI/GON/BH/2026",
-        "objet": "LA FOURNITURE, L’INSTALLATION ET LA MISE EN SERVICE DES CHAUFFE EAUX SOLAIRES POUR PLUSIEURS MOSQUEES DANS LA REGION DE GUELMIM OUED NOUN , EN LOT UNIQUE.",
-        "acheteur": "Acheteur public : DELEGUE REGIONAL DES AFFAIRES ISLAMIQUES DE LA REGION GUELMIM OUED NOUN",
+        "reference": "05/2026/PUSMS",
+        "objet": "ACQUISITION ET INSTALLATION DU MOBILIER D’ENSEIGNEMENT POUR L'ÉCOLE SUPÉRIEURE DE TECHNOLOGIE DE FKIH BEN SALAH en deux lots : Lot 1 : ACQUISITION ET INSTALLATION DU MOBILIER D’ENSEIGNEMENT POUR LES SALLES. Lot 2 : ...",
+        "acheteur": "Acheteur public : PRESIDENCE DE L'UNIVERSITE SULTAN MOULAY SLIMANE",
         "lieu": "",
         "date_limite": "20/10/2026 10:00",
+        "mot_cle": "laboratoire"
+      },
+      {
+        "reference": "39/2026/AOOI/CHM6M",
+        "objet": "l’achat de fongibles de laboratoire au profit de laboratoire d’hôpital Ar-razi relevant du centre hospitalo-universitaire Mohammed VI de Marrakech,",
+        "acheteur": "Acheteur public : CENTRE HOSPITALIER UNIVERSITAIRE MOHAMMED VI - MARRAKECH",
+        "lieu": "",
+        "date_limite": "20/10/2026 10:00",
+        "mot_cle": "laboratoire"
+      },
+      {
+        "reference": "09/SAP/2026",
+        "objet": "Fourniture, installation, intégration et la mise en service des systèmes de vidéo protection au niveau des sièges de la Préfecture de Police de Kénitra, District Mehdia, District Provincial de Sidi Slimane, District ...",
+        "acheteur": "Acheteur public : CHEF DE LA SURETE PROVINCIAL DE KENITRA",
+        "lieu": "",
+        "date_limite": "17/11/2026 11:00",
         "mot_cle": "four de laboratoire"
       },
       {
-        "reference": "13/2026/DPJL",
-        "objet": "Achat de mobilier de bureau pour le compte de la circonscription judiciaire de Laâyoune, en lot unique",
-        "acheteur": "Acheteur public : DIRECTION PROVINCIALE DE LA JUSTICE A LAAYOUNE",
+        "reference": "8/AOO/DPP/DG/ANP/2026",
+        "objet": "FOURNITURE, INSTALLATION, PARAMETRAGE ET MISE EN SERVICE \"DES SYSTEMES DES SIGNAUX DU TRAFIC PORTUAIRE\" (MATS SEMAPHORIQUES) DANS LES PORTS",
+        "acheteur": "Acheteur public : AGENCE NATIONALE DES PORTS",
         "lieu": "",
         "date_limite": "05/11/2026 10:00",
-        "mot_cle": "four à moufle"
+        "mot_cle": "four de laboratoire"
       },
       {
-        "reference": "13/2026/POLYINARA",
-        "objet": "Acquisition, installation et mise en marche des installations techniques au profit de la Polyclinique CNSS INARA, répartie en 03 lots distincts en vue de conclure un ou plusieurs marchés simples ...",
-        "acheteur": "Acheteur public : POLYCLINIQUE CNSS - INARA",
+        "reference": "09/AOO/DPP/DG/ANP/2026",
+        "objet": "Travaux de fourniture, installation, mise à niveau et maintenance du système de vidéosurveillance et de contrôle d’accès au port de Mohammedia",
+        "acheteur": "Acheteur public : AGENCE NATIONALE DES PORTS",
         "lieu": "",
-        "date_limite": "05/10/2026 11:00",
-        "mot_cle": "plaque chauffante"
+        "date_limite": "05/11/2026 10:00",
+        "mot_cle": "four de laboratoire"
       },
       {
-        "reference": "73/2026",
-        "objet": "Achat de Fournitures d’hygiène et de bain pour les élèves internes des établissements scolaires relevant de la Direction Provinciale à Essaouira -l’AREF MS-.",
-        "acheteur": "Acheteur public : DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE ESSAOUIRA",
+        "reference": "15/DPCR/ANP/2026",
+        "objet": "FOURNITURE DE VÊTEMENTS DE TRAVAIL POUR LE PERSONNEL DE LA DPCR AU TITRE DE L’ANNÉE 2026",
+        "acheteur": "Acheteur public \tLots",
+        "lieu": "Lieu d'exécution",
+        "date_limite": "22/10/2026 10:00",
+        "mot_cle": "four de laboratoire"
+      },
+      {
+        "reference": "496/2026/SRMCS",
+        "objet": "Marché cadre : Fourniture des Équipements haute fréquence pour le compte de la SRM-CS",
+        "acheteur": "Acheteur public : SOCIETE REGIONALE MULTISERVICES CASABLANCA - SETTAT SA",
         "lieu": "",
-        "date_limite": "05/10/2026 10:00",
+        "date_limite": "22/10/2026 09:30",
+        "mot_cle": "four de laboratoire"
+      },
+      {
+        "reference": "86/2026",
+        "objet": "LA FOURNITURE DE JEUX DE MORS ET ACCESOIRES DE FORAGES MINIERS",
+        "acheteur": "Acheteur public : OFFICE NATIONAL DES HYDROCARBURES ET DES MINES",
+        "lieu": "",
+        "date_limite": "20/10/2026 13:00",
+        "mot_cle": "four de laboratoire"
+      },
+      {
+        "reference": "01/DPAI/BH/2026",
+        "objet": "FOURNITURE DE MATERIEL DE SONORISATION POUR PLUSIEURS MOSQUEES DANS LA PROVINCE DE GUELMIM , EN LOT UNIQUE",
+        "acheteur": "Acheteur public : MINISTERE DES HABOUS ET DES AFFAIRES ISLAMIQUES",
+        "lieu": "",
+        "date_limite": "20/10/2026 12:00",
+        "mot_cle": "four de laboratoire"
+      },
+      {
+        "reference": "85/2026",
+        "objet": "LA FOURNITURE DE MATERIEL TECHNIQUE",
+        "acheteur": "Acheteur public : OFFICE NATIONAL DES HYDROCARBURES ET DES MINES",
+        "lieu": "",
+        "date_limite": "20/10/2026 11:00",
+        "mot_cle": "four de laboratoire"
+      },
+      {
+        "reference": "09/2026/AUT",
+        "objet": "Acquisition des licences logicielles SIG professionnelles bureautique et serveur pour le compte de l’Agence urbaine de Tanger",
+        "acheteur": "Acheteur public : AGENCE URBAINE DE TANGER",
+        "lieu": "",
+        "date_limite": "22/10/2026 11:30",
         "mot_cle": "bain thermostaté"
       },
       {
-        "reference": "38/2026/AOOI/CHM6M",
-        "objet": "L’acquisition de matériel médico technique pour les besoins des hôpitaux relevant du Centre Hospitalo-Universitaire Mohammed VI Marrakech.",
-        "acheteur": "Acheteur public : CENTRE HOSPITALIER UNIVERSITAIRE MOHAMMED VI - MARRAKECH",
+        "reference": "12/2026/AUS",
+        "objet": "Appel d'offres ouvert simplifié n° 12/2026/AUS relatif à l'acquisition du matériel technique au profit de l'Agence Urbaine de Settat.",
+        "acheteur": "Acheteur public : AGENCE URBAINE DE SETTAT",
         "lieu": "",
-        "date_limite": "15/10/2026 10:00",
-        "mot_cle": "thermomètre laboratoire"
+        "date_limite": "08/10/2026 11:30",
+        "mot_cle": "bain thermostaté"
       },
       {
-        "reference": "29/2026/SAD/GSTTTA",
-        "objet": "Fourniture, installation et mise en marche des autoclaves pour le service de stérilisation relevant de l’Hôpital Universitaire Général Mohammed VI Tanger du GST TTA en 2 lots. ...",
-        "acheteur": "Acheteur public : GROUPEMENT SANITAIRE TERRITORIAL TANGER - TETOUAN - AL HOCEIMA",
+        "reference": "11/2026/AUS",
+        "objet": "Appel d'offres ouvert simplifié n° 11/2026/AUS relatif à l'acquisition du matériel informatique au profit de l'Agence Urbaine de Settat.",
+        "acheteur": "Acheteur public : AGENCE URBAINE DE SETTAT",
         "lieu": "",
-        "date_limite": "15/10/2026 12:00",
-        "mot_cle": "autoclave"
+        "date_limite": "08/10/2026 11:00",
+        "mot_cle": "bain thermostaté"
+      },
+      {
+        "reference": "10/2026/AUS",
+        "objet": "Appel d'offres ouvert simplifié N° 10/2026/AUS relatif à l'acquisition du logiciel informatique au profit de l'Agence Urbaine de Settat.",
+        "acheteur": "Acheteur public : AGENCE URBAINE DE SETTAT",
+        "lieu": "",
+        "date_limite": "08/10/2026 10:30",
+        "mot_cle": "bain thermostaté"
+      },
+      {
+        "reference": "10/CCISTTA/2026",
+        "objet": "L’Acquisition et Installation de Mobilier de Bureau pour le Compte de la Chambre de Commerce, d'Industrie et de Services de la Région Tanger-Tétouan-Al Hoceima",
+        "acheteur": "Acheteur public : CHAMBRE DE COMMERCE D'INDUSTRIE ET DE SERVICES DE LA REGION DE Tanger-Tetouan- Al hoceima",
+        "lieu": "",
+        "date_limite": "27/10/2026 10:30",
+        "mot_cle": "purification d'eau"
+      },
+      {
+        "reference": "50/AOOI/DPSR/ANP/2026",
+        "objet": "ACQUISITION ET INSTALLATION DES ÉQUIPEMENTS AUDIOVISUELS POUR LE NOUVEAU PORT DE SAFI",
+        "acheteur": "Acheteur public : AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT DE SAFI ET REGION",
+        "lieu": "",
+        "date_limite": "20/10/2026 11:00",
+        "mot_cle": "purification d'eau"
       }
     ]
   }
