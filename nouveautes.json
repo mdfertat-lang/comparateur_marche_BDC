@@ -1,43 +1,29 @@
 {
-  "date_execution": "2026-09-27T09:23:38+00:00",
+  "date_execution": "2026-09-28T09:59:26+00:00",
   "comparaison": "J versus J-1 et J-2",
   "bdc": {
     "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
-    "commit_j": "02993f9f53901f86320b9a20c8f35982e3097f82",
-    "date_j": "2026-09-27T08:06:39Z",
-    "commit_j_moins_1": "0a6c13f97a4d8c8bacb516ac7122a0a8925721e9",
-    "date_j_moins_1": "2026-09-26T02:28:07Z",
-    "commit_j_moins_2": "fd3a3527356b6d2372c3ef377023dd5699ec2812",
-    "date_j_moins_2": "2026-09-25T02:27:38Z",
-    "nombre_nouvelles": 2,
+    "commit_j": "771af3bf2ab30a01c0b5c50ca915248fd00508c8",
+    "date_j": "2026-09-28T08:43:03Z",
+    "commit_j_moins_1": "02993f9f53901f86320b9a20c8f35982e3097f82",
+    "date_j_moins_1": "2026-09-27T08:06:39Z",
+    "commit_j_moins_2": "0a6c13f97a4d8c8bacb516ac7122a0a8925721e9",
+    "date_j_moins_2": "2026-09-26T02:28:07Z",
+    "nombre_nouvelles": 1,
     "annonces": [
       {
-        "reference": "02/DSHH/2026/GST-CS",
-        "objet": "Entretien et réparation de l'autoclave horizontal du bloc opératoire de l'hôpital AL HASSANI relevant du district sanitaire Hay Hassani",
-        "acheteur": "DISTRICT SANITAIRE HAY HASSANI",
-        "date_limite": "28/09/2026 12:00",
-        "lieu": "CASABLANCA",
+        "reference": "27/2026",
+        "objet": "ACHAT DE PRODUITS CHIMIQUES ET DES LABORATOIRES « CDTMR ; SP-SE ; SP-LMP ; CRSR » RELEVANT DE LA DELEGATION DU MINISTERE DE LA SANTE ET DE LA PROTECTION SOCIALE A LA PROVINCE DE KHOURIBGA.",
+        "acheteur": "DELEGUE DU MINISTERE DE LA SANTE A LA PROVINCE KHOURIBGA",
+        "date_limite": "30/09/2026 08:45",
+        "lieu": "KHOURIBGA",
         "categorie": "",
         "nature": "",
         "mot_cles": [
-          "autoclave"
+          "laboratoire",
+          "didactique"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/385513",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "29/LNESP/2026",
-        "objet": "Achat de mobilier de laboratoire",
-        "acheteur": "LABORATOIRE NATIONAL DES ETUDES ET DE SURVEILLANCE DE LA POLUTION",
-        "date_limite": "28/09/2026 16:00",
-        "lieu": "RABAT",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "laboratoire"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/385478",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/385583",
         "articles": "",
         "statut": ""
       }
@@ -45,22 +31,13 @@
   },
   "marches_publics": {
     "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
-    "commit_j": "aeb9ed4aedc76ec78d3c5b30940db473007802b3",
-    "date_j": "2026-09-27T08:12:39Z",
-    "commit_j_moins_1": "9c6cda378c1f1a386ced226dd10eea5e26f1ea5c",
-    "date_j_moins_1": "2026-09-26T02:35:55Z",
-    "commit_j_moins_2": "1ac21348ed11eda4b24f2fbe639027b371ac97d3",
-    "date_j_moins_2": "2026-09-25T02:35:27Z",
-    "nombre_nouvelles": 1,
-    "annonces": [
-      {
-        "reference": "73/2026/DRANEFBMK",
-        "objet": "Achat d’aliments pour le gibier de la Réserve Royale de chasse de Rass Beriakh, au profit de la Direction Régionale de l’Agence Nationale des Eaux et Forêts de Béni Mellal - Khénifra, Province de Khénifra (lot unique). ...",
-        "acheteur": "Acheteur public : DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EAUX ET FORETS BENI MELLAL - KHENIFRA",
-        "lieu": "",
-        "date_limite": "21/10/2026 10:00",
-        "mot_cle": "purification d'eau"
-      }
-    ]
+    "commit_j": "080248121251a49e2f79126409b09cc3f27b8c2e",
+    "date_j": "2026-09-28T08:50:00Z",
+    "commit_j_moins_1": "aeb9ed4aedc76ec78d3c5b30940db473007802b3",
+    "date_j_moins_1": "2026-09-27T08:12:39Z",
+    "commit_j_moins_2": "9c6cda378c1f1a386ced226dd10eea5e26f1ea5c",
+    "date_j_moins_2": "2026-09-26T02:35:55Z",
+    "nombre_nouvelles": 0,
+    "annonces": []
   }
 }
