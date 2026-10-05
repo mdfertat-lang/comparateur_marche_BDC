@@ -1,51 +1,26 @@
 {
-  "date_execution": "2026-10-04T09:57:35+00:00",
+  "date_execution": "2026-10-05T10:40:29+00:00",
   "comparaison": "J versus J-1 et J-2",
   "bdc": {
     "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
-    "commit_j": "ff16cf0610a789f050b8710ed7502abdf2567a43",
-    "date_j": "2026-10-04T08:27:42Z",
-    "commit_j_moins_1": "2cf047a808eff583a6189334ff023da0abbafd49",
-    "date_j_moins_1": "2026-10-03T08:04:25Z",
-    "commit_j_moins_2": "9ed6a71968500f2ed5a2f6255de3f643b8cfc9e6",
-    "date_j_moins_2": "2026-10-02T08:27:27Z",
-    "nombre_nouvelles": 1,
-    "annonces": [
-      {
-        "reference": "36/2026/FSTBM",
-        "objet": "Achat de Rames de papier Blanc A4 et A3 pour la Faculté des Sciences et Technique Béni Mellal",
-        "acheteur": "FACULTE DES SCIENCES ET TECHNIQUES BENI MELLAL",
-        "date_limite": "05/10/2026 19:00",
-        "lieu": "BENI MELLAL",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/388510",
-        "articles": "",
-        "statut": ""
-      }
-    ]
+    "commit_j": "cf31aadec26df9173743d6bf3c1f0e2777eae1b7",
+    "date_j": "2026-10-05T08:57:25Z",
+    "commit_j_moins_1": "ff16cf0610a789f050b8710ed7502abdf2567a43",
+    "date_j_moins_1": "2026-10-04T08:27:42Z",
+    "commit_j_moins_2": "2cf047a808eff583a6189334ff023da0abbafd49",
+    "date_j_moins_2": "2026-10-03T08:04:25Z",
+    "nombre_nouvelles": 0,
+    "annonces": []
   },
   "marches_publics": {
     "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
-    "commit_j": "ed94ca848170046a0ab12d43c642665610526520",
-    "date_j": "2026-10-04T08:19:10Z",
-    "commit_j_moins_1": "c9d85b207ebd8a90f4a55ba84d788cbb41fbdf83",
-    "date_j_moins_1": "2026-10-03T08:10:43Z",
-    "commit_j_moins_2": "17a89ee3540348074d79b1426ad09adec44def39",
-    "date_j_moins_2": "2026-10-02T08:32:23Z",
-    "nombre_nouvelles": 1,
-    "annonces": [
-      {
-        "reference": "67/2026/E/EXP/SRMDO",
-        "objet": "Mise à niveau et automatisation du réseau HTA de la SRM DO",
-        "acheteur": "Acheteur public : SOCIETE REGIONALE MULTISERVICES DAKHLA OUED EDDAHAB S.A",
-        "lieu": "",
-        "date_limite": "27/10/2026 11:00",
-        "mot_cle": "purification d'eau"
-      }
-    ]
+    "commit_j": "fb814c77a7f0441cfe0e1cba08da6ccefe8b51a4",
+    "date_j": "2026-10-05T09:03:16Z",
+    "commit_j_moins_1": "ed94ca848170046a0ab12d43c642665610526520",
+    "date_j_moins_1": "2026-10-04T08:19:10Z",
+    "commit_j_moins_2": "c9d85b207ebd8a90f4a55ba84d788cbb41fbdf83",
+    "date_j_moins_2": "2026-10-03T08:10:43Z",
+    "nombre_nouvelles": 0,
+    "annonces": []
   }
 }
