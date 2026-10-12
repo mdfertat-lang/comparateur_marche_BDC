@@ -1,121 +1,28 @@
 {
-  "date_execution": "2026-10-11T10:10:03+00:00",
+  "date_execution": "2026-10-12T11:06:59+00:00",
   "comparaison": "J versus J-1 et J-2",
   "bdc": {
     "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
-    "commit_j": "7b47308c14eedb8d889c056bbd82736fce022d55",
-    "date_j": "2026-10-11T08:46:23Z",
-    "commit_j_moins_1": "bf4a9bb7b8cd2412ecff89c59383af7598518f20",
-    "date_j_moins_1": "2026-10-10T08:30:30Z",
-    "commit_j_moins_2": "75eedf925bc27c09d5cb77b52260a4a3e9120d34",
-    "date_j_moins_2": "2026-10-09T08:58:50Z",
-    "nombre_nouvelles": 7,
+    "commit_j": "aabf3f0d4c2ee1e71a3db54033b4e78f3ff2c828",
+    "date_j": "2026-10-12T09:08:29Z",
+    "commit_j_moins_1": "7b47308c14eedb8d889c056bbd82736fce022d55",
+    "date_j_moins_1": "2026-10-11T08:46:23Z",
+    "commit_j_moins_2": "bf4a9bb7b8cd2412ecff89c59383af7598518f20",
+    "date_j_moins_2": "2026-10-10T08:30:30Z",
+    "nombre_nouvelles": 1,
     "annonces": [
       {
-        "reference": "02/10/INV/2026",
-        "objet": "Achat de matériel informatique dans le cadre de la dotation de l'encouragement de la recherche scientifique.",
+        "reference": "09/10/FNC/2026",
+        "objet": "Prestation d'impression dans le cadre La dotation Structure de recherche scientifique LABO LASIME.",
         "acheteur": "ECOLE SUPERIEURE DE TECHNOLOGIE - AGADIR",
-        "date_limite": "13/10/2026 11:00",
+        "date_limite": "14/10/2026 12:00",
         "lieu": "AGADIR IDA OU TANANE",
         "categorie": "",
         "nature": "",
         "mot_cles": [
           "scientifique"
         ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/391826",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "07/10/FNC/2026",
-        "objet": "Achat de matériel informatique dans le cadre de la dotation de la structure de la recherche scientifique LABO LASIME",
-        "acheteur": "ECOLE SUPERIEURE DE TECHNOLOGIE - AGADIR",
-        "date_limite": "13/10/2026 11:00",
-        "lieu": "AGADIR IDA OU TANANE",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/391859",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "08/10/FNC/2026",
-        "objet": "Achat de matériel scientifique dans le cadre de la dotation de la structure de la recherche scientifique LABO LASIME",
-        "acheteur": "ECOLE SUPERIEURE DE TECHNOLOGIE - AGADIR",
-        "date_limite": "13/10/2026 11:00",
-        "lieu": "AGADIR IDA OU TANANE",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/391865",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "211-2026FMPO",
-        "objet": "Charte graphique impressions et sacs à l’occasion de la 7ème journée scientifique sous le thème : PSYCHOSOMATIQUE DU FEMININ.",
-        "acheteur": "FACULTE DE MEDECINE ET DE PHARMACIE OUJDA",
-        "date_limite": "12/10/2026 12:10",
-        "lieu": "OUJDA-ANGAD",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/391797",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "BC-137-ISSS-2026",
-        "objet": "Achat de mobilier de bureau pour l’équipement de la salle d’unité de recherche physique et ingénierie en santé PISAN du laboratoire SIBBS de l’Institut Supérieur des sciences de la santé",
-        "acheteur": "INSTITUT SUPERIEUR DES SCIENCES DE LA SANTE SETTAT",
-        "date_limite": "14/10/2026 12:00",
-        "lieu": "MAROC, SETTAT",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science",
-          "laboratoire"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/391461",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "BC-138-ISSS-2026",
-        "objet": "Achat de fourniture électrique pour la salle d’unité de recherche physique et ingénierie en santé PISAN du laboratoire SIBBS de l’Institut Supérieur des sciences de la santé",
-        "acheteur": "INSTITUT SUPERIEUR DES SCIENCES DE LA SANTE SETTAT",
-        "date_limite": "14/10/2026 12:00",
-        "lieu": "MAROC, SETTAT",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science",
-          "laboratoire"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/391476",
-        "articles": "",
-        "statut": ""
-      },
-      {
-        "reference": "BC-139-ISSS-2026",
-        "objet": "Achat de matériel d’enseignement pour l’unité de recherche physique et ingénierie en santé PISAN du laboratoire SIBBS de l’Institut Supérieur des sciences de la santé",
-        "acheteur": "INSTITUT SUPERIEUR DES SCIENCES DE LA SANTE SETTAT",
-        "date_limite": "14/10/2026 12:00",
-        "lieu": "MAROC, SETTAT",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "science",
-          "laboratoire"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/391480",
+        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/391910",
         "articles": "",
         "statut": ""
       }
@@ -123,30 +30,13 @@
   },
   "marches_publics": {
     "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
-    "commit_j": "a9f72d3d9dd2bf856bedd550a39a5e196103a3b1",
-    "date_j": "2026-10-11T08:52:29Z",
-    "commit_j_moins_1": "3149bef204cdf02371426dcc1b713695b8a05134",
-    "date_j_moins_1": "2026-10-10T08:37:15Z",
-    "commit_j_moins_2": "a103f92c7d969ade9bc7d7268ec4b7dac8bd86ab",
-    "date_j_moins_2": "2026-10-09T09:03:59Z",
-    "nombre_nouvelles": 2,
-    "annonces": [
-      {
-        "reference": "21/DPCR/ANP/2026",
-        "objet": "FOURNITURE, INSTALLATION, MISE EN SERVICE ET MAINTENANCE D’UN SYSTEME DE COUVERTURE RADIO MOBILE INDOOR DE TYPE DAS AU NOUVEAU BATIMENT COMMUNAUTAIRE",
-        "acheteur": "Acheteur public : AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT DE CASABLANCA ET REGION",
-        "lieu": "",
-        "date_limite": "10/11/2026 10:00",
-        "mot_cle": "four de laboratoire"
-      },
-      {
-        "reference": "10011937/2026/SRMDT",
-        "objet": "Fourniture de l’eau de Javel à 30° et du matériel de suivi du chlore résiduel dans l'Eau Potable pour le compte de la SRM-DT.",
-        "acheteur": "Acheteur public : SOCIETE REGIONALE MULTISERVICES DARAA - TAFILALET S.A",
-        "lieu": "",
-        "date_limite": "03/11/2026 11:00",
-        "mot_cle": "purification d'eau"
-      }
-    ]
+    "commit_j": "790e5d63e0aedc322ec529317d75f8402e2dd58f",
+    "date_j": "2026-10-12T09:14:11Z",
+    "commit_j_moins_1": "a9f72d3d9dd2bf856bedd550a39a5e196103a3b1",
+    "date_j_moins_1": "2026-10-11T08:52:29Z",
+    "commit_j_moins_2": "3149bef204cdf02371426dcc1b713695b8a05134",
+    "date_j_moins_2": "2026-10-10T08:37:15Z",
+    "nombre_nouvelles": 0,
+    "annonces": []
   }
 }
