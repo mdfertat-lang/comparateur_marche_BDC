@@ -1,42 +1,234 @@
 {
-  "date_execution": "2026-10-18T08:11:08+00:00",
+  "date_execution": "2026-10-29T10:13:43+00:00",
   "comparaison": "J versus J-1 et J-2",
   "bdc": {
     "depot_source": "mdfertat-lang/veille-bon-de-commande-maroc",
-    "commit_j": "4e2bf63054c4de26ce3b7487e708f3e04482c2ae",
-    "date_j": "2026-10-18T07:19:51Z",
-    "commit_j_moins_1": "0cc18039b88f57e271a7995c98503e8317ee6e70",
-    "date_j_moins_1": "2026-10-17T06:59:37Z",
-    "commit_j_moins_2": "fa2ec4ab03726e3463fab3151f1497876266b46c",
-    "date_j_moins_2": "2026-10-16T07:07:52Z",
-    "nombre_nouvelles": 1,
-    "annonces": [
-      {
-        "reference": "22/CRMEFLSH-COL/2026",
-        "objet": "Réalisation des prestations nécessaires à l’organisation des manifestations culturelles et scientifiques par Le CRMEF LSH .",
-        "acheteur": "CENTRE REGIONAL DES METIERS DE L'EDUCATION ET DE FORMATION DE LA REGION LAAYOUNE SAKIA EL HAMRA",
-        "date_limite": "20/10/2026 10:00",
-        "lieu": "LAAYOUNE",
-        "categorie": "",
-        "nature": "",
-        "mot_cles": [
-          "scientifique"
-        ],
-        "url": "https://www.marchespublics.gov.ma/bdc/entreprise/consultation/show/388489",
-        "articles": "",
-        "statut": ""
-      }
-    ]
+    "commit_j": "17433a8fac2268be96711ff0c936e3fbae3833a2",
+    "date_j": "2026-10-29T08:26:45Z",
+    "commit_j_moins_1": "ea3c42d8bf7290513eeb6a7e29547a4ad8bb47f9",
+    "date_j_moins_1": "2026-10-28T08:18:17Z",
+    "commit_j_moins_2": "0ed0f08f6327127034c12b6de945996c090b25cd",
+    "date_j_moins_2": "2026-10-27T07:45:41Z",
+    "nombre_nouvelles": 0,
+    "annonces": []
   },
   "marches_publics": {
     "depot_source": "mdfertat-lang/veille-marches-publics-maroc",
-    "commit_j": "d958a078aa5b6fc52bc9c94f6682a8835e7c3aee",
-    "date_j": "2026-10-18T07:27:46Z",
-    "commit_j_moins_1": "218dc46b280aeea87ad40e6401713e1fd646c634",
-    "date_j_moins_1": "2026-10-17T07:07:34Z",
-    "commit_j_moins_2": "2f390586f2b12bfa60ffa4e33dd5b6061bc22aa5",
-    "date_j_moins_2": "2026-10-16T07:15:00Z",
-    "nombre_nouvelles": 0,
-    "annonces": []
+    "commit_j": "7fb7ab10d33a6e0e03ae615056863db1bcfc49db",
+    "date_j": "2026-10-29T08:27:32Z",
+    "commit_j_moins_1": "ead1cb4abb6bc61831cc56d58203e6a9d24d75e0",
+    "date_j_moins_1": "2026-10-28T08:17:42Z",
+    "commit_j_moins_2": "2469a01a3eabba15f3ee807926f39c0870763218",
+    "date_j_moins_2": "2026-10-27T09:04:01Z",
+    "nombre_nouvelles": 23,
+    "annonces": [
+      {
+        "reference": "Référence : 06/2026/CRRAAGD",
+        "objet": "OBJET : Acquisition du matériel scientifique pour les unités de recherche relevant du Centre Régional de la Recherche Agronomique d’Agadir, en quatre lots",
+        "acheteur": "ACHETEUR PUBLIC : INSTITUT NATIONAL DE LA RECHERCHE AGRONOMIQUE/ CENTRE REGIONAL DE LA RECHERCHE AGRONOMIQUE D'AGADIR",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "scientifique",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 56IUH2C/2026",
+        "objet": "OBJET : ACQUISITION DU MATERIEL SCIENTIFIQUE AU PROFIT DE L’ECOLE NORMALE SUPERIEURE DE L’ENSEIGNEMENT TECHNIQUE MOHAMMEDIA (EN TROIS LOTS) ». ❖ LOT 1 : Acquisition de matériel scientifique pour fabrication",
+        "acheteur": "ACHETEUR PUBLIC : PRESIDENT DE L'UNIVERSITE HASSAN II DE CASABLANCA",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "scientifique",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : ls632026",
+        "objet": "OBJET : Acquisition des appareils scientifiques de laboratoire (EU) pour La Société Régionale Multiservices Laâyoune-Sakia El Hamra « SRM-LS » Estimation TTC (en DH) : 499 800,00",
+        "acheteur": "ACHETEUR PUBLIC : SOCIETE REGIONALE MULTISERVICES LAAYOUNE - SAKIA EL HAMRA S.A",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "scientifique",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 45MATBURFSAAMMESRSI/2026/PUIZ",
+        "objet": "OBJET : ACHAT DE MATÉRIEL DE BUREAU POUR LE COMPTE DE LA FACULTÉ DES SCIENCES APPLIQUÉES D’AÏT MELLOUL -DIGI -MESRSI(LOT UNIQUE)",
+        "acheteur": "ACHETEUR PUBLIC : PRESIDENCE DE L'UNIVERSITE IBN ZOHR AGADIR",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "science",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 171/2026/AREF/FM",
+        "objet": "OBJET : ACQUISITION DU MATERIEL D’ENSEIGNEMENT DE LA MATIERE SVT (SCIENCE DE LA VIE ET DE LA TERRE) AU PROFIT DES COLLEGES PIONNIERS RELEVANT DE L'AREF FES MEKNES Estimation TTC (en DH) : 4 519 678,80",
+        "acheteur": "ACHETEUR PUBLIC : ACADEMIE REGIONALE D'EDUCATION ET DE FORMATION FES-MEKNES",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "science",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 12/2026/ESTg/GST.TTA",
+        "objet": "OBJET : Achat des équipements médico-techniques destinés aux différentes formations sanitaires relevant du district sanitaire de Tanger divisé en 7 lots",
+        "acheteur": "ACHETEUR PUBLIC : ESPACE - DISTRICT SANITAIRE TANGER",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "laboratoire",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 04MATLAB/2026/FMPA",
+        "objet": "OBJET : MATERIEL DE LABORATOIRE AU PROFIT DE LA FACULTE DE MEDECINE ET DE PHARMACIE D’AGADIR AU TITRE DE L’ANNEE 2026 EN LOT UNIQUE Estimation TTC (en DH) : 543 144,00",
+        "acheteur": "ACHETEUR PUBLIC : FACULTE DE MEDECINE ET DE PHARMACIE AGADIR",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "laboratoire",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 156/2026/GSTCS",
+        "objet": "OBJET : ACHAT DE RÉACTIFS ET DE PRODUITS CHIMIQUES ET BIOLOGIQUES POUR LES BESOINS DES LABORATOIRES DE L’HÔPITAL UNIVERSITAIRE IBN ROCHD RELEVANT DU GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA-SETTAT.",
+        "acheteur": "ACHETEUR PUBLIC : GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA - SETTAT",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "laboratoire",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 15/ENA/2026",
+        "objet": "OBJET : Acquisition de fournitures pour matériel informatique pour le compte de l’Ecole Nationale de l’Administration. Estimation TTC (en DH) : 65 460,00",
+        "acheteur": "ACHETEUR PUBLIC : ECOLE NATIONALE DE L'ADMINISTRATION",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four de laboratoire",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 30/2026/dpa/4/SMOPFPA",
+        "objet": "OBJET : achat d’orge subventionne pour l’alimentation du bétail au profit des éleveurs y compris le chargement, déchargement, le transport et la livraison aux chefs-lieux des communes territoriales de la province de Béni-Mellal. Estimation TTC (en DH) : 1 800 000,00",
+        "acheteur": "ACHETEUR PUBLIC : DIRECTEUR PROVINCIAL DE L'AGRICULTURE DE BENIMELLAL",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 87/DGPC/2026",
+        "objet": "OBJET : l’acquisition des unités de pompage remorquable avec accessoires destinées aux différentes unités de la Protection civile de Tétouan, Al Hoceima, Fès, Oujda, Casablanca, Rabat, Marrakech, Beni Mellal, Errachidia, Agadir Estimation TTC (en DH) : 30 000 000,00",
+        "acheteur": "ACHETEUR PUBLIC : DIRECTION GENERALE DE LA PROTECTION CIVILE",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 74/2026/DGM",
+        "objet": "OBJET : achat de ballons à hélium et cartouches hygroscopiques et glaçogènes destinées au fonctionnement des systèmes NOMAD transportable de gonflage (Préfecture Hay Hassani). Estimation TTC (en DH) : 3 840 000,00",
+        "acheteur": "ACHETEUR PUBLIC : DIRECTEUR DE LA METEOROLOGIE NATIONALE",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 01/PMSI/2026",
+        "objet": "OBJET : Acquisition des ordinateurs de bureau pour le compte de la Présidence du Ministère Public.",
+        "acheteur": "ACHETEUR PUBLIC : Présidence du Ministère Public",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 98/DGPC/2026",
+        "objet": "OBJET : l’acquisition des motopompes remorquables destinées aux différentes unités de la Protection civile (lot unique). Estimation TTC (en DH) : 18 000 000,00",
+        "acheteur": "ACHETEUR PUBLIC : DIRECTION GENERALE DE LA PROTECTION CIVILE",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 70/2026/DGM",
+        "objet": "OBJET : Acquisition d’une solution de suivi des lancées de ballons à Hélium pour la mise à niveau des systèmes NOMAD (Préfecture d’arrondissement Hay Hassani) Estimation TTC (en DH) : 7 338 000,00",
+        "acheteur": "ACHETEUR PUBLIC : DIRECTEUR DE LA METEOROLOGIE NATIONALE",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 93/DGPC/2026",
+        "objet": "OBJET : l'acquisition des consommables médicaux destinés au dépôt régional de la Protection Civile d'Al Arjate (lot unique). Estimation TTC (en DH) : 6 801 180,00",
+        "acheteur": "ACHETEUR PUBLIC : DIRECTION GENERALE DE LA PROTECTION CIVILE",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 30/INDH/2026",
+        "objet": "OBJET : ACQUISITION DE DOUZE (12) VEHICULES DE TRANSPORT SCOLAIRE AU PROFIT DE LA PROVINCE CHICHAOUA. Estimation TTC (en DH) : 5 400 000,00",
+        "acheteur": "ACHETEUR PUBLIC : GOUVERNEUR DE LA PROVINCE DE CHICHAOUA",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 59/2026",
+        "objet": "OBJET : Acquisition, mise en service et maintenance d’une infrastructure Datacenter au profit de Barid Al-Maghrib (Marché à tranche conditionnelle) Estimation TTC (en DH) : 29 400 000,00",
+        "acheteur": "ACHETEUR PUBLIC : POSTE MAROC",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 137/2026/GSTCS",
+        "objet": "OBJET : ACHAT DES MEDICAMENTS POUR LES BESOINS DES HOPITAUX UNIVERSITAIRES RELEVANT DU GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA –SETTAT",
+        "acheteur": "ACHETEUR PUBLIC : GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA - SETTAT",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "four à moufle",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 0010010322",
+        "objet": "OBJET : Fourniture de deux postes préfabriqués urbain type cabine (Préfecture Agadir Ida-Outanane) Estimation TTC (en DH) : 960 000,00",
+        "acheteur": "ACHETEUR PUBLIC : SOCIETE REGIONALE MULTISERVICES SOUSS - MASSA SA",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "bain thermostaté",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 16/AURS/2026",
+        "objet": "OBJET : Acquisition et le renouvellement de licences de logiciels ARCGIS pro ou équivalent, abonnement annuel pour le compte de l’Agence Urbaine de Rabat-Sale Estimation TTC (en DH) : 168 000,00",
+        "acheteur": "ACHETEUR PUBLIC : AGENCE URBAINE DE RABAT-SALE",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "bain thermostaté",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 09/2026/CRRAAGD",
+        "objet": "OBJET : Acquisition de mobilier de bureau pour le Centre Régional de la Recherche Agronomique d’Agadir, en lot unique Estimation TTC (en DH) : 1 236 600,00",
+        "acheteur": "ACHETEUR PUBLIC : INSTITUT NATIONAL DE LA RECHERCHE AGRONOMIQUE/ CENTRE REGIONAL DE LA RECHERCHE AGRONOMIQUE D'AGADIR",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "purification d'eau",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      },
+      {
+        "reference": "Référence : 41IUH2C/2026",
+        "objet": "OBJET : Achat de Fourniture, installation et mise en service d’un évaporateur/métalliseur d’échantillons destiné au MEB sous vide primaire configurable soit en pulvérisation cathodique simple, soit en évaporateur de carbone Estimation TTC (en DH) : 720 000,00",
+        "acheteur": "ACHETEUR PUBLIC : PRESIDENT DE L'UNIVERSITE HASSAN II DE CASABLANCA",
+        "lieu": "LIEU D'EXÉCUTION",
+        "date_limite": "",
+        "mot_cle": "évaporateur",
+        "alerte_date": "À vérifier — date limite absente ou illisible"
+      }
+    ]
   }
 }
